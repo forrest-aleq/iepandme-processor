@@ -174,7 +174,7 @@ async function extractDocumentText(filePath: string, fileType: string = 'txt'): 
 /**
  * Extract IEP data using Claude 4 Opus
  */
-export async function extractWithClaude4(documentText: string): Promise<IEPData> {
+export async function extractWithClaude4(documentText: string): Promise<{data: IEPData; usage?: ApiUsage; model: string}> {
   const prompt = `You are analyzing an IEP document. Extract ALL information and return as JSON.
                   Include student info, goals, accommodations, services, present levels, and other key sections.
                   Format goal 'target' as a clear, measurable outcome statement.
@@ -244,7 +244,7 @@ export async function extractWithClaude4(documentText: string): Promise<IEPData>
 
   try {
     const response = await anthropic.messages.create({
-      model: 'claude-3-opus-20240229',
+      model: 'claude-opus-4-20250514', // Using Claude 4 Opus
       max_tokens: 4000,
       messages: [{ role: 'user', content: prompt }],
       temperature: 0.2,
@@ -278,7 +278,123 @@ export async function extractWithClaude4(documentText: string): Promise<IEPData>
       throw new Error(`Could not parse Claude response as JSON: ${parseError}`);
     }
   } catch (error) {
-    console.error('Claude extraction error:', error);
+    console.error('Claude 4 Opus extraction failed:', error);
+    throw error;
+  }
+}
+
+/**
+ * Extract IEP data using Claude 4 Sonnet
+ */
+export async function extractWithClaude4Sonnet(documentText: string): Promise<{data: IEPData; usage?: ApiUsage; model: string}> {
+  const prompt = `Extract structured IEP data from the following document. Return ONLY valid JSON matching this exact schema:
+
+                  {
+                    "studentInfo": {
+                      "name": "",
+                      "id": "",
+                      "grade": "",
+                      "school": "",
+                      "district": "",
+                      "dob": "",
+                      "age": "",
+                      "disability_category": [],
+                      "eligibility_date": "",
+                      "iep_date": "",
+                      "iep_review_date": "",
+                      "parent_guardian": "",
+                      "parent_contact": ""
+                    },
+                    "goals": [
+                      {
+                        "area": "",
+                        "description": "",
+                        "baseline": "",
+                        "target": "",
+                        "progress_measures": [],
+                        "services": []
+                      }
+                    ],
+                    "accommodations": [
+                      {
+                        "category": "",
+                        "description": "",
+                        "settings": [],
+                        "subjects": []
+                      }
+                    ],
+                    "services": [
+                      {
+                        "type": "",
+                        "provider": "",
+                        "frequency": "",
+                        "duration": "",
+                        "location": ""
+                      }
+                    ],
+                    "presentLevels": {
+                      "academic": "",
+                      "functional": "",
+                      "social": ""
+                    },
+                    "transitionPlan": "",
+                    "behaviorPlan": "",
+                    "placementJustification": "",
+                    "assessmentAccommodations": [],
+                    "teamMembers": [],
+                    "additionalNotes": ""
+                  }
+
+                  IEP document text:
+                  ${documentText}`;
+
+  try {
+    const response = await anthropic.messages.create({
+      model: 'claude-sonnet-4-20250514', // Using Claude 4 Sonnet
+      max_tokens: 4000,
+      messages: [{ role: 'user', content: prompt }],
+      temperature: 0.2,
+    });
+
+    // Extract JSON from response
+    let content = '';
+    if (response.content && response.content.length > 0) {
+      // Handle both text and tool_use blocks
+      if ('text' in response.content[0]) {
+        content = response.content[0].text;
+      } else if ('tool_use' in response.content[0]) {
+        const toolUse = response.content[0].tool_use as any;
+        content = toolUse.input ? JSON.stringify(toolUse.input) : '';
+      }
+    }
+
+    // Clean and parse JSON
+    const jsonMatch = content.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      throw new Error('No valid JSON found in Claude 4 Sonnet response');
+    }
+
+    const extractedData = JSON.parse(jsonMatch[0]);
+    
+    // Calculate usage and cost
+    const inputTokens = response.usage?.input_tokens || Math.ceil(documentText.length / 4);
+    const outputTokens = response.usage?.output_tokens || Math.ceil(content.length / 4);
+    const totalTokens = inputTokens + outputTokens;
+    const cost = calculateClaude4SonnetCost(inputTokens, outputTokens);
+    
+    return {
+      data: extractedData as IEPData,
+      usage: {
+        prompt_tokens: inputTokens,
+        completion_tokens: outputTokens,
+        total_tokens: totalTokens,
+        cost_usd: cost
+      },
+      model: 'claude-sonnet-4-20250514'
+    };
+
+  } catch (error) {
+    console.error('Claude 4 Sonnet extraction failed:', error);
     throw error;
   }
 }
@@ -384,43 +500,107 @@ export async function extractWithO4MiniHigh(documentText: string): Promise<{data
 }
 
 /**
- * Calculate confidence score for extracted data
+ * Calculate cost for Claude 4 Opus usage
+ */
+function calculateClaude4OpusCost(inputTokens: number, outputTokens: number): number {
+  const INPUT_COST_PER_MILLION = 15.0; // $15 per million tokens
+  const OUTPUT_COST_PER_MILLION = 75.0; // $75 per million tokens
+  
+  const inputCost = (inputTokens / 1_000_000) * INPUT_COST_PER_MILLION;
+  const outputCost = (outputTokens / 1_000_000) * OUTPUT_COST_PER_MILLION;
+  
+  return inputCost + outputCost;
+}
+
+/**
+ * Calculate cost for Claude 4 Sonnet usage
+ */
+function calculateClaude4SonnetCost(inputTokens: number, outputTokens: number): number {
+  const INPUT_COST_PER_MILLION = 3.0; // $3 per million tokens
+  const OUTPUT_COST_PER_MILLION = 15.0; // $15 per million tokens
+  
+  const inputCost = (inputTokens / 1_000_000) * INPUT_COST_PER_MILLION;
+  const outputCost = (outputTokens / 1_000_000) * OUTPUT_COST_PER_MILLION;
+  
+  return inputCost + outputCost;
+}
+
+/**
+ * Calculate confidence score for extracted data with enhanced robustness
  */
 function calculateConfidence(data: IEPData): number {
   let score = 0;
-  let total = 0;
+  let total = 100; // Base total out of 100
+  let penalties = 0;
   
-  // Student info present
-  if (data.studentInfo) {
-    score += data.studentInfo.name ? 25 : 0;
-    total += 25;
-  }
-  
-  // Goals present and have required fields
-  if (data.goals && data.goals.length > 0) {
+  // Core data presence (60 points total)
+  if (data.studentInfo?.name) {
     score += 25;
-    total += 25;
+    // Bonus for complete student info
+    if (data.studentInfo.grade && data.studentInfo.school) score += 5;
+  } else {
+    penalties += 20; // Major penalty for missing student name
   }
   
-  // Accommodations present
+  // Goals quality assessment (25 points)
+  if (data.goals && data.goals.length > 0) {
+    score += 15;
+    
+    // Quality checks for goals
+    const completeGoals = data.goals.filter(g => 
+      g.description && g.baseline && g.target
+    ).length;
+    const goalCompleteness = completeGoals / data.goals.length;
+    score += Math.round(goalCompleteness * 10);
+    
+    // Penalty for suspiciously few or many goals
+    if (data.goals.length < 2) penalties += 5;
+    if (data.goals.length > 8) penalties += 3;
+    
+    // Penalty for vague/generic goals
+    const vagueGoals = data.goals.filter(g => 
+      g.description && (g.description.length < 20 || 
+      g.description.includes('will improve') && g.description.length < 50)
+    ).length;
+    penalties += vagueGoals * 3;
+  } else {
+    penalties += 15; // Major penalty for no goals
+  }
+  
+  // Accommodations assessment (10 points)
   if (data.accommodations && data.accommodations.length > 0) {
-    score += 15;
-    total += 15;
+    score += 8;
+    // Bonus for detailed accommodations
+    const detailedAccommodations = data.accommodations.filter(a => 
+      a.description && a.description.length > 10
+    ).length;
+    score += Math.min(detailedAccommodations, 2);
   }
   
-  // Services present
+  // Services assessment (10 points)
   if (data.services && data.services.length > 0) {
-    score += 15;
-    total += 15;
+    score += 8;
+    // Bonus for complete service info
+    const completeServices = data.services.filter(s => 
+      s.frequency && s.duration && s.provider
+    ).length;
+    score += Math.min(completeServices, 2);
   }
   
-  // Present levels present
+  // Present levels assessment (5 points)
   if (data.presentLevels && Object.keys(data.presentLevels).length > 0) {
-    score += 20;
-    total += 20;
+    score += 5;
   }
   
-  return total > 0 ? (score / total) * 100 : 0;
+  // Additional quality checks
+  // Penalty for missing critical dates
+  if (data.studentInfo && !data.studentInfo.iep_date) penalties += 3;
+  
+  // Calculate final score with penalties
+  const finalScore = Math.max(0, score - penalties);
+  
+  // Cap confidence at 95% to account for inherent uncertainty
+  return Math.min(finalScore, 95);
 }
 
 /**
@@ -531,44 +711,92 @@ export async function processIEPDocument(filePath: string, fileType: string = 't
     // Step 3: Use text-based extraction
     console.log('🧠 Extracting data from document text...');
     
-    // Try OpenAI o4-mini first
+    // Model selection - easily switch for testing
+    const PRIMARY_MODEL = process.env.PRIMARY_MODEL || 'o4-mini'; // Options: 'o4-mini', 'claude', 'claude-sonnet'
+    const FALLBACK_MODEL = process.env.FALLBACK_MODEL || 'claude';
+    
     const processStart = Date.now();
-    console.log('   - Attempting extraction with OpenAI o4-mini...');
-    try {
-      extractionResult = await extractWithO4MiniHigh(documentText);
-      if (extractionResult?.usage) {
-        finalUsage = extractionResult.usage;
-      }
-      console.log(`   - o4-mini extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
-    } catch (err) {
-      console.warn('   - o4-mini extraction failed, falling back to Claude:', err);
-      
-      // Try Claude as fallback
+    
+    // Try primary model first
+    if (PRIMARY_MODEL === 'claude') {
+      console.log('   - Attempting extraction with Claude 4 Opus...');
       try {
-        claudeResult = await extractWithClaude4(documentText);
-        console.log(`   - Claude extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
-      } catch (claudeErr) {
-        console.error('   - Claude extraction also failed:', claudeErr);
-        throw new Error('All extraction methods failed');
+        const claudeExtraction = await extractWithClaude4(documentText);
+        claudeResult = claudeExtraction.data;
+        if (claudeExtraction.usage) {
+          finalUsage = claudeExtraction.usage;
+        }
+        console.log(`   - Claude 4 Opus extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+      } catch (err) {
+        console.warn('   - Claude 4 Opus extraction failed, falling back to o4-mini:', err);
+        try {
+          extractionResult = await extractWithO4MiniHigh(documentText);
+          if (extractionResult?.usage) {
+            finalUsage = extractionResult.usage;
+          }
+          console.log(`   - o4-mini extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+        } catch (fallbackErr) {
+          console.error('   - o4-mini extraction also failed:', fallbackErr);
+          throw new Error('All extraction methods failed');
+        }
+      }
+    } else if (PRIMARY_MODEL === 'claude-sonnet') {
+      console.log('   - Attempting extraction with Claude 4 Sonnet...');
+      try {
+        const claudeExtraction = await extractWithClaude4Sonnet(documentText);
+        claudeResult = claudeExtraction.data;
+        if (claudeExtraction.usage) {
+          finalUsage = claudeExtraction.usage;
+        }
+        console.log(`   - Claude 4 Sonnet extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+      } catch (err) {
+        console.warn('   - Claude 4 Sonnet extraction failed, falling back to o4-mini:', err);
+        try {
+          extractionResult = await extractWithO4MiniHigh(documentText);
+          if (extractionResult?.usage) {
+            finalUsage = extractionResult.usage;
+          }
+          console.log(`   - o4-mini extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+        } catch (fallbackErr) {
+          console.error('   - o4-mini extraction also failed:', fallbackErr);
+          throw new Error('All extraction methods failed');
+        }
+      }
+    } else {
+      // Default: o4-mini first
+      console.log('   - Attempting extraction with OpenAI o4-mini...');
+      try {
+        extractionResult = await extractWithO4MiniHigh(documentText);
+        if (extractionResult?.usage) {
+          finalUsage = extractionResult.usage;
+        }
+        console.log(`   - o4-mini extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+      } catch (err) {
+        console.warn('   - o4-mini extraction failed, falling back to Claude:', err);
+        try {
+          const claudeExtraction = await extractWithClaude4(documentText);
+          claudeResult = claudeExtraction.data;
+          if (claudeExtraction.usage) {
+            finalUsage = claudeExtraction.usage;
+          }
+          console.log(`   - Claude extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+        } catch (claudeErr) {
+          console.error('   - Claude extraction also failed:', claudeErr);
+          throw new Error('All extraction methods failed');
+        }
       }
     }
     
     if (extractionResult) {
       finalData = extractionResult.data;
-      extraction_metadata.o4_mini_confidence = 100; // Using o4_mini naming to maintain consistency
+      extraction_metadata.o4_mini_confidence = calculateConfidence(extractionResult.data); // Use actual confidence calculation
       console.log(`   - Using OpenAI ${extractionResult.model} extraction results`);
     } else if (claudeResult) {
       finalData = claudeResult;
-      extraction_metadata.claude_confidence = 100;
+      extraction_metadata.claude_confidence = calculateConfidence(claudeResult); // Use actual confidence calculation
       console.log('   - Using Claude extraction results (fallback model)');
       
-      // Estimate Claude usage (since it doesn't provide detailed usage)
-      finalUsage = {
-        prompt_tokens: Math.ceil(documentText.length / 4), // Rough estimate
-        completion_tokens: 2000, // Rough estimate
-        total_tokens: Math.ceil(documentText.length / 4) + 2000,
-        cost_usd: 0.05 // Rough estimate
-      };
+      // finalUsage should already be set from the Claude extraction above
     } else {
       throw new Error('No extraction data available');
     }

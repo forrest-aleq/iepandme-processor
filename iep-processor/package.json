@@ -11,6 +11,10 @@
     "test:legacy": "tsx src/test-runner.ts",
     "test:single": "tsx src/test-single.ts",
     "test:accuracy": "tsx src/accuracy-test.ts",
+    "test:claude4-opus": "npm run build && PRIMARY_MODEL=claude tsx src/test-runner-dist.ts",
+    "test:claude4-sonnet": "npm run build && PRIMARY_MODEL=claude-sonnet tsx src/test-runner-dist.ts",
+    "test:o4mini": "npm run build && PRIMARY_MODEL=o4-mini tsx src/test-runner-dist.ts",
+    "test:compare": "npm run test:o4mini && npm run test:claude4-opus",
     "clean": "rm -rf dist",
     "setup": "npm install && npm run build"
   },
