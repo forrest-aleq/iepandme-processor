@@ -12,6 +12,8 @@ import PdfParse from 'pdf-parse';
 import mammoth from 'mammoth';
 import { OpenAI } from 'openai';
 import Anthropic from '@anthropic-ai/sdk';
+import { extractWithO4MiniResponses } from './extractors/o4-mini-responses';
+import { IEPData } from './types';
 
 // Configure environment variables
 dotenv.config();
@@ -25,7 +27,7 @@ const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY || '',
 });
 
-// Type definitions
+// Type definitions for legacy compatibility
 export interface Goal {
   area: string;
   description: string;
@@ -70,20 +72,6 @@ export interface StudentInfo {
 
 export interface PresentLevels {
   [key: string]: string;
-}
-
-export interface IEPData {
-  studentInfo: StudentInfo;
-  goals?: Goal[];
-  accommodations?: Accommodation[];
-  services?: Service[];
-  presentLevels?: PresentLevels;
-  transitionPlan?: string;
-  behaviorPlan?: string;
-  placementJustification?: string;
-  assessmentAccommodations?: string[];
-  teamMembers?: string[];
-  additionalNotes?: string;
 }
 
 export interface ValidationResult {
@@ -604,39 +592,6 @@ function calculateConfidence(data: IEPData): number {
 }
 
 /**
- * Compare results from different models and create consensus
- */
-function compareAndMerge(claudeData: IEPData | null, o4MiniData: IEPData | null): ConsensusResult {
-  const consensus: ConsensusResult = {
-    extraction_metadata: {
-      claude_confidence: claudeData ? calculateConfidence(claudeData) : 0,
-      o4_mini_confidence: o4MiniData ? calculateConfidence(o4MiniData) : 0,
-      fields_matched: 0,
-      fields_conflicted: [],
-      consensus_used: 'hybrid'
-    },
-    data: {} as IEPData
-  };
-  
-  // Use the data with higher confidence
-  if (!claudeData) {
-    consensus.data = o4MiniData as IEPData;
-    consensus.extraction_metadata.consensus_used = 'o4-mini-only';
-  } else if (!o4MiniData) {
-    consensus.data = claudeData;
-    consensus.extraction_metadata.consensus_used = 'claude-only';
-  } else if ((consensus.extraction_metadata.claude_confidence || 0) > (consensus.extraction_metadata.o4_mini_confidence || 0)) {
-    consensus.data = claudeData;
-    consensus.extraction_metadata.consensus_used = 'claude-preferred';
-  } else {
-    consensus.data = o4MiniData;
-    consensus.extraction_metadata.consensus_used = 'o4-mini-preferred';
-  }
-  
-  return consensus;
-}
-
-/**
  * Validate the extracted IEP data
  */
 export function validateIEPData(data: IEPData): ValidationResult {
@@ -675,6 +630,8 @@ export function validateIEPData(data: IEPData): ValidationResult {
   
   return result;
 }
+
+
 
 /**
  * Main processing function with enhanced logging
@@ -764,15 +721,15 @@ export async function processIEPDocument(filePath: string, fileType: string = 't
       }
     } else {
       // Default: o4-mini first
-      console.log('   - Attempting extraction with OpenAI o4-mini...');
+      console.log('   - Attempting extraction with o4-mini Responses API...');
       try {
-        extractionResult = await extractWithO4MiniHigh(documentText);
+        extractionResult = await extractWithO4MiniResponses(filePath, 'medium');
         if (extractionResult?.usage) {
           finalUsage = extractionResult.usage;
         }
-        console.log(`   - o4-mini extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
+        console.log(`   - o4-mini Responses API extraction completed in ${((Date.now() - processStart) / 1000).toFixed(2)}s`);
       } catch (err) {
-        console.warn('   - o4-mini extraction failed, falling back to Claude:', err);
+        console.warn('   - o4-mini Responses API extraction failed, falling back to Claude:', err);
         try {
           const claudeExtraction = await extractWithClaude4(documentText);
           claudeResult = claudeExtraction.data;
@@ -789,7 +746,7 @@ export async function processIEPDocument(filePath: string, fileType: string = 't
     
     if (extractionResult) {
       finalData = extractionResult.data;
-      extraction_metadata.o4_mini_confidence = calculateConfidence(extractionResult.data); // Use actual confidence calculation
+      extraction_metadata.o4_mini_confidence = calculateConfidence(extractionResult.data as any); // Use actual confidence calculation
       console.log(`   - Using OpenAI ${extractionResult.model} extraction results`);
     } else if (claudeResult) {
       finalData = claudeResult;
@@ -812,7 +769,7 @@ export async function processIEPDocument(filePath: string, fileType: string = 't
     // Step 5: Validate results
     console.log('✅ Validating extracted data...');
     const validateStart = Date.now();
-    const validation = validateIEPData(consensus.data);
+    const validation = validateIEPData(consensus.data as any);
     console.log(`   - Validation completed in ${((Date.now() - validateStart) / 1000).toFixed(2)}s`);
     console.log(`   - Found ${validation.errors.length} errors, ${validation.warnings.length} warnings`);
     
@@ -821,7 +778,7 @@ export async function processIEPDocument(filePath: string, fileType: string = 't
     // Step 5: Return complete result
     return {
       success: true,
-      data: consensus.data,
+      data: consensus.data as any,
       metadata: {
         ...consensus.extraction_metadata,
         validation,
