@@ -1,0 +1,40 @@
+{
+  "testSummary": {
+    "totalFiles": 2,
+    "successCount": 0,
+    "failureCount": 2,
+    "avgConfidence": 0,
+    "totalProcessingTime": 129527,
+    "totalCost": 0,
+    "avgCostPerFile": 0
+  },
+  "detailedResults": [
+    {
+      "file": "Carter Powell ReGeneration Middle School.pdf",
+      "success": false,
+      "confidence": 0,
+      "errors": [
+        "No extraction data available"
+      ],
+      "warnings": [],
+      "processingTime": 57027,
+      "goalsCount": 0,
+      "accommodationsCount": 0,
+      "servicesCount": 0
+    },
+    {
+      "file": "KSJC IEPs Angel Sanchez.pdf",
+      "success": false,
+      "confidence": 0,
+      "errors": [
+        "No extraction data available"
+      ],
+      "warnings": [],
+      "processingTime": 72500,
+      "goalsCount": 0,
+      "accommodationsCount": 0,
+      "servicesCount": 0
+    }
+  ],
+  "timestamp": "2025-07-18T03:40:01.686Z"
+}

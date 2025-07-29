@@ -1,0 +1,347 @@
+{
+  "sourceFile": "./samples/Carter Powell ReGeneration Middle School.pdf",
+  "timestamp": "2025-07-24T21:48:50.289Z",
+  "model": "o4-mini-2025-04-16-schema-compliant",
+  "processingTime": 74496,
+  "usage": {
+    "prompt_tokens": 59986,
+    "completion_tokens": 5219,
+    "reasoning_tokens": 0,
+    "total_tokens": 65205,
+    "cost_usd": 0.088948
+  },
+  "validation": {
+    "valid": true,
+    "score": 97,
+    "issues": [],
+    "fieldCompleteness": {
+      "meta.doc_id": true,
+      "meta.source": true,
+      "meta.version": true,
+      "meta.extracted_at": true,
+      "student.first_name": true,
+      "student.last_name": true,
+      "student.dob": true,
+      "student.student_id": true,
+      "student.grade": true,
+      "student.school": true,
+      "student.district": true,
+      "meeting.iep_start_date": true,
+      "meeting.iep_end_date": true,
+      "meeting.meeting_date": true,
+      "meeting.participants": true,
+      "eligibility.primary_disability": true,
+      "eligibility.secondary_disabilities": true,
+      "eligibility.eligibility_date": true,
+      "eligibility.reeval_due_date": true,
+      "present_levels.academic_achievement": true,
+      "present_levels.functional_performance": true,
+      "present_levels.strengths": true,
+      "present_levels.needs": true,
+      "present_levels.parent_input": false,
+      "goals": true,
+      "goals[0].area": true,
+      "goals[0].statement": true,
+      "goals[0].baseline": true,
+      "goals[0].criteria": true,
+      "goals[0].measurement_method": true,
+      "goals[0].short_term_objectives": true,
+      "goals[1].area": true,
+      "goals[1].statement": true,
+      "goals[1].baseline": true,
+      "goals[1].criteria": true,
+      "goals[1].measurement_method": true,
+      "goals[1].short_term_objectives": true,
+      "goals[2].area": true,
+      "goals[2].statement": true,
+      "goals[2].baseline": true,
+      "goals[2].criteria": true,
+      "goals[2].measurement_method": true,
+      "goals[2].short_term_objectives": true,
+      "services": true,
+      "services[0].type": true,
+      "services[0].provider_role": true,
+      "services[0].location": true,
+      "services[0].frequency": true,
+      "services[0].duration_minutes": true,
+      "services[1].type": true,
+      "services[1].provider_role": true,
+      "services[1].location": true,
+      "services[1].frequency": true,
+      "services[1].duration_minutes": true,
+      "services[2].type": true,
+      "services[2].provider_role": true,
+      "services[2].location": true,
+      "services[2].frequency": true,
+      "services[2].duration_minutes": true,
+      "accommodations": true,
+      "accommodations[0].description": true,
+      "accommodations[0].context": true,
+      "accommodations[1].description": true,
+      "accommodations[1].context": true,
+      "accommodations[2].description": true,
+      "accommodations[2].context": true,
+      "accommodations[3].description": true,
+      "accommodations[3].context": true,
+      "accommodations[4].description": true,
+      "accommodations[4].context": true,
+      "accommodations[5].description": true,
+      "accommodations[5].context": true,
+      "modifications": true,
+      "assessment_participation.state_assessments": true,
+      "placement.lre_percentage_general_ed": true,
+      "placement.lre_description": true,
+      "placement.transportation": true,
+      "progress_reports": true,
+      "signatures": false
+    },
+    "summary": {
+      "totalFields": 79,
+      "completedFields": 77,
+      "missingCriticalFields": [],
+      "missingOptionalFields": [
+        "present_levels.parent_input",
+        "signatures"
+      ]
+    }
+  },
+  "extractedData": {
+    "meta": {
+      "doc_id": "IEP-1027-2025",
+      "source": "Regeneration Middle School IEP",
+      "version": "PR-07 IEP FORM REVISED BY ODE: September 27, 2018",
+      "extracted_at": "2025-07-24T00:00:00Z"
+    },
+    "student": {
+      "first_name": "Carter",
+      "last_name": "Powell",
+      "dob": "2013-11-22",
+      "student_id": "1027",
+      "grade": "5",
+      "school": "Regeneration Middle School",
+      "district": "ReGeneration Schools"
+    },
+    "meeting": {
+      "iep_start_date": "2025-05-13",
+      "iep_end_date": "2026-05-12",
+      "meeting_date": "2025-05-13",
+      "participants": [
+        {
+          "name": "Anissa Powell",
+          "role": "Parent/Guardian"
+        },
+        {
+          "name": "Holly Endres",
+          "role": "Intervention Specialist"
+        },
+        {
+          "name": "Kelly Brown",
+          "role": "Other"
+        },
+        {
+          "name": "Derrell Melton",
+          "role": "District Representative"
+        },
+        {
+          "name": "S. Roland",
+          "role": "General Education Teacher"
+        }
+      ]
+    },
+    "eligibility": {
+      "primary_disability": "Intellectual Disability",
+      "secondary_disabilities": [],
+      "eligibility_date": "2023-04-28",
+      "reeval_due_date": "2027-04-27"
+    },
+    "present_levels": {
+      "academic_achievement": "In reading, Carter scored an overall Kindergarten level in the 2nd percentile. He scored in the kindergarten range in phonics, high frequency words, vocabulary, and comprehension of informational text. He scored in the first grade range for comprehension of literature. In math, Carter obtained a RIT score of 449 (20th percentile), scoring in the 5th grade range in number operations, 1st grade in algebraic thinking, 4th grade in measurement/data and 4th grade in geometry.",
+      "functional_performance": "Carter benefits from small group instruction and requires supports such as guided instruction, repeated instruction and feedback to make progress. He continues to need breaks during extended periods of testing or instruction (over 50 minutes) to refocus. Behavior: one suspension for a fight (atypical). Attendance: 18 days absent, 8 tardies.",
+      "strengths": "Carter is a pleasant student. He recognizes lower and uppercase letters, matches consonant sounds to letters, matches short vowel sounds, draws conclusions or makes inferences with support, sequences events with guidance, and has foundational math skills including multi-digit multiplication and division.",
+      "needs": "He requires systematic phonics instruction, guided practice, and feedback for decoding and fluency; support to develop inferencing, main idea, vocabulary and comprehension skills; instruction in ratio and other math skills; and behavioral supports to maintain focus.",
+      "parent_input": ""
+    },
+    "goals": [
+      {
+        "id": "G1",
+        "area": "Reading Decoding",
+        "statement": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+        "baseline": "According to the most recent iReady diagnostic testing in reading in May 2025, Carter scored an overall Kindergarten level in the 2nd percentile.",
+        "criteria": "85 correct words per minute at 80% accuracy in 3 out of 4 trials",
+        "measurement_method": "Running Records",
+        "progress_reporting_frequency": "9 weeks",
+        "short_term_objectives": [
+          {
+            "id": "G1.1",
+            "statement": "Given a set of sentences, Carter will decode CVC words correctly with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          },
+          {
+            "id": "G1.2",
+            "statement": "Given a set of sentences, Carter will decode high frequency sight words with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          },
+          {
+            "id": "G1.3",
+            "statement": "Given a set of sentences, Carter will decode long vowel words with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          }
+        ]
+      },
+      {
+        "id": "G2",
+        "area": "Reading Comprehension",
+        "statement": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+        "baseline": "He scored in the kindergarten range in vocabulary and comprehension of informational text and in the first grade range for comprehension of literature, able to draw conclusions, compare and contrast, sequence events and identify cause and effect with support.",
+        "criteria": "80% accuracy in 3 out of 4 trials",
+        "measurement_method": "Curriculum-Based Assessment",
+        "progress_reporting_frequency": "9 weeks",
+        "short_term_objectives": [
+          {
+            "id": "G2.1",
+            "statement": "Given a grade level text read aloud, Carter will determine the main idea of the text with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          },
+          {
+            "id": "G2.2",
+            "statement": "Given a grade level text read aloud, Carter will highlight or underline at least one supporting detail that accurately supports the main idea with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          }
+        ]
+      },
+      {
+        "id": "G3",
+        "area": "Math",
+        "statement": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+        "baseline": "In May 2025 diagnostic testing, Carter scored a RIT of 449 (20th percentile) and demonstrated ability to multiply multi-digit numbers, divide four-digit numbers by two-digit numbers and identify number pairs for sums to 10.",
+        "criteria": "80% accuracy in 3 out of 4 trials",
+        "measurement_method": "Curriculum-Based Assessment; Short-Cycle Assessments",
+        "progress_reporting_frequency": "9 weeks",
+        "short_term_objectives": [
+          {
+            "id": "G3.1",
+            "statement": "When given a set of multiplication problems up to 3 digits, Carter will solve the problems with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          },
+          {
+            "id": "G3.2",
+            "statement": "When given a set of division problems, Carter will solve the problems correctly with 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          },
+          {
+            "id": "G3.3",
+            "statement": "When given a ratio problem, Carter will solve for the unit rate at 80% accuracy in 3 out of 4 trials.",
+            "criteria": "80% accuracy in 3 out of 4 trials",
+            "due_date": ""
+          }
+        ]
+      }
+    ],
+    "services": [
+      {
+        "id": "S1",
+        "type": "Reading Decoding Instruction (SDI)",
+        "provider_role": "Intervention Specialist",
+        "location": "Resource Room",
+        "frequency": {
+          "amount": 1,
+          "unit": "session/week"
+        },
+        "duration_minutes": 60,
+        "group_size": "small group",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "S2",
+        "type": "Reading Comprehension Instruction (SDI)",
+        "provider_role": "Intervention Specialist",
+        "location": "Resource Room",
+        "frequency": {
+          "amount": 1,
+          "unit": "session/week"
+        },
+        "duration_minutes": 30,
+        "group_size": "small group",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "S3",
+        "type": "Math Ratios Instruction (SDI)",
+        "provider_role": "Intervention Specialist",
+        "location": "Resource Room",
+        "frequency": {
+          "amount": 1,
+          "unit": "session/week"
+        },
+        "duration_minutes": 60,
+        "group_size": "small group",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      }
+    ],
+    "accommodations": [
+      {
+        "id": "A1",
+        "description": "Extended time (2x typical peers)",
+        "context": "classroom instruction and testing",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "A2",
+        "description": "Small group testing and instruction of remedial skills",
+        "context": "testing and instruction",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "A3",
+        "description": "Breaks during longer testing or assignment times",
+        "context": "testing and extended assignments",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "A4",
+        "description": "Guided notes or anchor charts for new concepts",
+        "context": "instruction",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "A5",
+        "description": "Read aloud or text to speech that is at grade level or not on instructional level",
+        "context": "instruction and independent work",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      },
+      {
+        "id": "A6",
+        "description": "Calculator for tests that are not testing computation",
+        "context": "testing",
+        "start_date": "2025-05-13",
+        "end_date": "2026-05-12"
+      }
+    ],
+    "modifications": [],
+    "assessment_participation": {
+      "state_assessments": []
+    },
+    "placement": {
+      "lre_percentage_general_ed": 0,
+      "lre_description": "Specially designed instruction in resource room for reading decoding, reading comprehension and math ratios.",
+      "transportation": false
+    },
+    "progress_reports": [],
+    "signatures": []
+  }
+}

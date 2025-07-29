@@ -1,0 +1,194 @@
+{
+  "sourceFile": "./samples/Carter Powell ReGeneration Middle School.pdf",
+  "processingTime": 68582,
+  "timestamp": "2025-07-24T21:11:54.177Z",
+  "model": "o4-mini-2025-04-16-responses",
+  "usage": {
+    "prompt_tokens": 59317,
+    "completion_tokens": 1461,
+    "total_tokens": 63210,
+    "cost_usd": 0.082378,
+    "reasoning_tokens": 2432
+  },
+  "extractedData": {
+    "metadata": {
+      "schemaVersion": "1.0",
+      "source": "Regeneration Middle School IEP",
+      "documentDate": "2025-05-13",
+      "parsedAt": "2025-07-24"
+    },
+    "studentInfo": {
+      "name": "Carter Powell",
+      "school": "Regeneration Middle School",
+      "grade": "5",
+      "gender": "Male",
+      "studentId": "1027",
+      "birthdate": "2013-11-22",
+      "district": "Cincinnati Public Schools",
+      "homeAddress": "2949 Westknolls Ln., Cincinnati, OH 45211",
+      "parent_guardian": "Anissa Powell; Desmond Dixon",
+      "parent_contact": "Cell: 5132950351; 5138027111",
+      "disability_category": [
+        "Intellectual Disability"
+      ],
+      "eligibility_date": "2023-05-12",
+      "iep_date": "2025-05-13",
+      "iep_review_date": "2026-05-12"
+    },
+    "reviewDates": {
+      "annualReview": "2026-05-12",
+      "effectiveUntil": "2026-05-12"
+    },
+    "caseManager": {
+      "name": "Michele Lucci",
+      "email": "mlucci@CICSBasil.org"
+    },
+    "presentLevels": {
+      "academics": "According to the most recent iReady diagnostic testing in reading and math in May 2025. In reading, Carter scored an overall Kindergarten level in the 2nd percentile. He scored in the kindergarten range in phonics, high frequency words, vocabulary, and comprehension of informational text. He scored in the first grade range for comprehension of literature.",
+      "adaptiveDailyLivingSkills": "Responses indicated that Carter may have difficulty completing many daily living tasks independently.",
+      "communicationDevelopment": "Carter demonstrates poor expressive and receptive communication skills and has difficulty seeking out and finding information on his own.",
+      "grossFineMotorDevelopment": "Needs practice with fine motor tasks such as tracing, copying designs, and jigsaw puzzles to improve visual motor coordination.",
+      "health": "",
+      "socialEmotionalBehavioral": "Concerns noted: Carter often threatens to hurt others, loses his temper too easily, cannot wait his turn, annoys others on purpose, breaks rules, bullies, hurts and teases others, and disrupts classmates’ work.",
+      "vocational": ""
+    },
+    "goals": [
+      {
+        "goalArea": "Reading Decoding",
+        "goalTopic": "",
+        "baseline": "recognize lower and uppercase letters; match consonant sounds to letters s, f, r, m, p, l, t, d, n, g, b, c, h in isolation; match short vowel sounds a and i in isolation.",
+        "description": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+        "targetPercentage": 80,
+        "targetDate": "2026-05-12",
+        "additionalGoalAreas": [],
+        "shortTermObjectives": [
+          "Given a set of sentences, Carter will decode CVC words correctly with 80% accuracy in 3 out of 4 trials.",
+          "Given a set of sentences, Carter will decode high frequency sight words with 80% accuracy in 3 out of 4 trials.",
+          "Given a set of sentences, Carter will decode long vowel words with 80% accuracy in 3 out of 4 trials."
+        ],
+        "progress_measures": [
+          "H. Running Records"
+        ]
+      },
+      {
+        "goalArea": "Reading Comprehension",
+        "goalTopic": "",
+        "baseline": "with support draw conclusions or make inferences in read-aloud literary text or in pictures; with supports, compare and contrast characters or events within a literary text read aloud; with support, sequence pictures of two events or identify the beginning, middle, or end of literary text read aloud; with support, describe the relationship between pictures and the text in which they appear in a literary text read aloud; with support, identify examples of cause and effect using pictures or word in informational text read aloud.",
+        "description": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+        "targetPercentage": 80,
+        "targetDate": "2026-05-12",
+        "additionalGoalAreas": [],
+        "shortTermObjectives": [
+          "Given a grade level text read aloud, Carter will determine the main idea of the text with 80% accuracy in 3 out of 4 trials.",
+          "Given a grade level text read aloud, Carter will highlight or underline at least one supporting detail that accurately supports the main idea with 80% accuracy in 3 out of 4 trials."
+        ],
+        "progress_measures": [
+          "A. Curriculum-Based Assessment"
+        ]
+      },
+      {
+        "goalArea": "Mathematics",
+        "goalTopic": "Ratios",
+        "baseline": "49 point increase to a RIT score of 449 (20th percentile) with 5th grade number operations, 1st grade algebraic thinking, 4th grade measurement/data and geometry",
+        "description": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+        "targetPercentage": 80,
+        "targetDate": "2026-05-12",
+        "additionalGoalAreas": [],
+        "shortTermObjectives": [
+          "When given a set of multiplication problems up to 3 digits, Carter will solve the problems with 80% accuracy in 3 out of 4 trials.",
+          "When given a set of division problems, Carter will solve the problems correctly with 80% accuracy in 3 out of 4 trials.",
+          "When given a ratio problem, Carter will solve for the unit rate at 80% accuracy in 3 out of 4 trials."
+        ],
+        "progress_measures": [
+          "A. Curriculum-Based Assessment",
+          "E. Short-Cycle Assessments",
+          "H. Running Records",
+          "I. Work Samples"
+        ]
+      }
+    ],
+    "accommodations": [
+      {
+        "category": "Instructional",
+        "description": "guided notes or anchor charts for new concepts",
+        "settings": [],
+        "subjects": []
+      },
+      {
+        "category": "Assessment",
+        "description": "extended time (2x typical peers)",
+        "settings": [],
+        "subjects": []
+      },
+      {
+        "category": "Assessment",
+        "description": "small group testing and instruction of remedial skills",
+        "settings": [],
+        "subjects": []
+      },
+      {
+        "category": "Behavioral",
+        "description": "breaks during longer testing or assignment times",
+        "settings": [],
+        "subjects": []
+      },
+      {
+        "category": "Instructional",
+        "description": "read aloud or text to speech that is at grade level or not on instructional level",
+        "settings": [],
+        "subjects": []
+      },
+      {
+        "category": "Assessment",
+        "description": "calculator for tests that are not testing computation",
+        "settings": [],
+        "subjects": []
+      }
+    ],
+    "services": [
+      {
+        "type": "Specially Designed Instruction",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "60 mins",
+        "location": "Resource Room"
+      },
+      {
+        "type": "Specially Designed Instruction",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "30 minutes",
+        "location": "Resource Room"
+      },
+      {
+        "type": "Specially Designed Instruction",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "60 min",
+        "location": "Resource Room"
+      }
+    ],
+    "standardizedAssessments": [
+      {
+        "name": "WISC-V",
+        "date": "2023-04-28",
+        "scores": {
+          "raw": "",
+          "percentile": "2",
+          "standardScore": "69",
+          "gradeEquivalent": ""
+        }
+      },
+      {
+        "name": "WJ-IV",
+        "date": "2023-04-28",
+        "scores": {
+          "raw": "",
+          "percentile": "<0.1",
+          "standardScore": "<40",
+          "gradeEquivalent": "K.3"
+        }
+      }
+    ]
+  }
+}

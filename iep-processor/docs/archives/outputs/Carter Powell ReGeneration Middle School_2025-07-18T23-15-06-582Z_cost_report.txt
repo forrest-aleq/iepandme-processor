@@ -1,0 +1,17 @@
+
+========================================
+IEP PROCESSING COST REPORT
+========================================
+File: Carter Powell ReGeneration Middle School.pdf
+Date: 2025-07-18T23:15:30.923Z
+
+API USAGE:
+-----------------------------------------
+Claude 4 Opus: FAILED
+OpenAI o4_mini: SUCCESS
+
+TOTAL TOKENS: 25,369
+ESTIMATED COST: $0.2810
+
+PROCESSING TIME: 24.33 seconds
+========================================

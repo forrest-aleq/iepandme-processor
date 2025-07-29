@@ -1,0 +1,316 @@
+{
+  "sourceFile": "Carter Powell ReGeneration Middle School.pdf",
+  "processingTime": 16978,
+  "timestamp": "2025-07-18T23:20:42.362Z",
+  "success": true,
+  "extractedData": {
+    "studentInfo": {
+      "name": "Carter Powell",
+      "id": "1027",
+      "grade": "5",
+      "school": "Regeneration Middle School",
+      "district": "Cincinnati Public Schools",
+      "dob": "11/22/2013",
+      "age": "9",
+      "disability_category": [
+        "Intellectual Disabilities"
+      ],
+      "eligibility_date": "04/28/2023",
+      "iep_date": "05/13/2025",
+      "iep_review_date": "05/12/2026",
+      "parent_guardian": "Anissa Powell",
+      "parent_contact": "5132950351"
+    },
+    "goals": [
+      {
+        "area": "Reading Decoding",
+        "description": "Carter will decode and read fluently.",
+        "baseline": "Carter scored an overall Kindergarten level in the 2nd percentile.",
+        "target": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+        "progress_measures": [
+          "Curriculum-Based Assessment",
+          "Portfolios",
+          "Observation",
+          "Anecdotal Records",
+          "Short-Cycle Assessments",
+          "Performance Assessments",
+          "Checklists",
+          "Running Records",
+          "Work Samples",
+          "Inventories",
+          "Rubrics"
+        ],
+        "services": []
+      },
+      {
+        "area": "Reading Comprehension",
+        "description": "Carter will determine the main idea of a text.",
+        "baseline": "Carter scored in the kindergarten range in vocabulary and comprehension of informational text.",
+        "target": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+        "progress_measures": [
+          "Curriculum-Based Assessment",
+          "Portfolios",
+          "Observation",
+          "Anecdotal Records",
+          "Short-Cycle Assessments",
+          "Performance Assessments",
+          "Checklists",
+          "Running Records",
+          "Work Samples",
+          "Inventories",
+          "Rubrics"
+        ],
+        "services": []
+      },
+      {
+        "area": "Mathematics",
+        "description": "Carter will solve problems involving ratios.",
+        "baseline": "Carter scored in the 20th percentile in math.",
+        "target": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+        "progress_measures": [
+          "Curriculum-Based Assessment",
+          "Portfolios",
+          "Observation",
+          "Anecdotal Records",
+          "Short-Cycle Assessments",
+          "Performance Assessments",
+          "Checklists",
+          "Running Records",
+          "Work Samples",
+          "Inventories",
+          "Rubrics"
+        ],
+        "services": []
+      }
+    ],
+    "accommodations": [
+      {
+        "category": "Testing Accommodations",
+        "description": "Extended time (2x typical peers), small group testing and instruction of remedial skills, breaks during longer testing or assignment times.",
+        "settings": [],
+        "subjects": []
+      },
+      {
+        "category": "Instructional Accommodations",
+        "description": "Guided notes or anchor charts for new concepts, read aloud or text to speech that is at grade level or not on instructional level, calculator for tests that are not testing computation.",
+        "settings": [],
+        "subjects": []
+      }
+    ],
+    "services": [
+      {
+        "type": "Specially Designed Instruction",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "60 mins",
+        "location": "Resource Room"
+      },
+      {
+        "type": "Specially Designed Instruction",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "30 minutes",
+        "location": "Resource Room"
+      },
+      {
+        "type": "Specially Designed Instruction",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "60 min",
+        "location": "Resource Room"
+      }
+    ],
+    "presentLevels": {
+      "academic": "Carter's overall achievement is very low when compared to the range of scores obtained by others at his grade level.",
+      "functional": "Carter has significant difficulty comprehending and completing schoolwork in a variety of academic areas.",
+      "social": "Carter exhibits behaviors that may adversely affect other children in the classroom."
+    },
+    "transitionPlan": "",
+    "behaviorPlan": "",
+    "placementJustification": "Carter requires a space that allows him to focus on repeated practice, guided practice and systematic instruction, especially in the area of reading fluency.",
+    "assessmentAccommodations": [
+      "text to speech",
+      "small group",
+      "extended time (2x typical peers)",
+      "breaks during testing to allow for refocus"
+    ],
+    "teamMembers": [
+      "Anissa Powell - Parent/Guardian",
+      "Holly Endres - Intervention Specialist",
+      "Kelly Brown - Other",
+      "Derrell Melton - District Representative",
+      "S. Roland - General Education Teacher"
+    ],
+    "additionalNotes": ""
+  },
+  "metadata": {
+    "o4_mini_confidence": 100,
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "processing_time": "2025-07-18T23:20:42.362Z",
+    "models_used": [
+      "o4-mini-high"
+    ]
+  },
+  "rawResults": {
+    "claude": null,
+    "o4_mini": {
+      "data": {
+        "studentInfo": {
+          "name": "Carter Powell",
+          "id": "1027",
+          "grade": "5",
+          "school": "Regeneration Middle School",
+          "district": "Cincinnati Public Schools",
+          "dob": "11/22/2013",
+          "age": "9",
+          "disability_category": [
+            "Intellectual Disabilities"
+          ],
+          "eligibility_date": "04/28/2023",
+          "iep_date": "05/13/2025",
+          "iep_review_date": "05/12/2026",
+          "parent_guardian": "Anissa Powell",
+          "parent_contact": "5132950351"
+        },
+        "goals": [
+          {
+            "area": "Reading Decoding",
+            "description": "Carter will decode and read fluently.",
+            "baseline": "Carter scored an overall Kindergarten level in the 2nd percentile.",
+            "target": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+            "progress_measures": [
+              "Curriculum-Based Assessment",
+              "Portfolios",
+              "Observation",
+              "Anecdotal Records",
+              "Short-Cycle Assessments",
+              "Performance Assessments",
+              "Checklists",
+              "Running Records",
+              "Work Samples",
+              "Inventories",
+              "Rubrics"
+            ],
+            "services": []
+          },
+          {
+            "area": "Reading Comprehension",
+            "description": "Carter will determine the main idea of a text.",
+            "baseline": "Carter scored in the kindergarten range in vocabulary and comprehension of informational text.",
+            "target": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+            "progress_measures": [
+              "Curriculum-Based Assessment",
+              "Portfolios",
+              "Observation",
+              "Anecdotal Records",
+              "Short-Cycle Assessments",
+              "Performance Assessments",
+              "Checklists",
+              "Running Records",
+              "Work Samples",
+              "Inventories",
+              "Rubrics"
+            ],
+            "services": []
+          },
+          {
+            "area": "Mathematics",
+            "description": "Carter will solve problems involving ratios.",
+            "baseline": "Carter scored in the 20th percentile in math.",
+            "target": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+            "progress_measures": [
+              "Curriculum-Based Assessment",
+              "Portfolios",
+              "Observation",
+              "Anecdotal Records",
+              "Short-Cycle Assessments",
+              "Performance Assessments",
+              "Checklists",
+              "Running Records",
+              "Work Samples",
+              "Inventories",
+              "Rubrics"
+            ],
+            "services": []
+          }
+        ],
+        "accommodations": [
+          {
+            "category": "Testing Accommodations",
+            "description": "Extended time (2x typical peers), small group testing and instruction of remedial skills, breaks during longer testing or assignment times.",
+            "settings": [],
+            "subjects": []
+          },
+          {
+            "category": "Instructional Accommodations",
+            "description": "Guided notes or anchor charts for new concepts, read aloud or text to speech that is at grade level or not on instructional level, calculator for tests that are not testing computation.",
+            "settings": [],
+            "subjects": []
+          }
+        ],
+        "services": [
+          {
+            "type": "Specially Designed Instruction",
+            "provider": "Intervention Specialist",
+            "frequency": "per week",
+            "duration": "60 mins",
+            "location": "Resource Room"
+          },
+          {
+            "type": "Specially Designed Instruction",
+            "provider": "Intervention Specialist",
+            "frequency": "per week",
+            "duration": "30 minutes",
+            "location": "Resource Room"
+          },
+          {
+            "type": "Specially Designed Instruction",
+            "provider": "Intervention Specialist",
+            "frequency": "per week",
+            "duration": "60 min",
+            "location": "Resource Room"
+          }
+        ],
+        "presentLevels": {
+          "academic": "Carter's overall achievement is very low when compared to the range of scores obtained by others at his grade level.",
+          "functional": "Carter has significant difficulty comprehending and completing schoolwork in a variety of academic areas.",
+          "social": "Carter exhibits behaviors that may adversely affect other children in the classroom."
+        },
+        "transitionPlan": "",
+        "behaviorPlan": "",
+        "placementJustification": "Carter requires a space that allows him to focus on repeated practice, guided practice and systematic instruction, especially in the area of reading fluency.",
+        "assessmentAccommodations": [
+          "text to speech",
+          "small group",
+          "extended time (2x typical peers)",
+          "breaks during testing to allow for refocus"
+        ],
+        "teamMembers": [
+          "Anissa Powell - Parent/Guardian",
+          "Holly Endres - Intervention Specialist",
+          "Kelly Brown - Other",
+          "Derrell Melton - District Representative",
+          "S. Roland - General Education Teacher"
+        ],
+        "additionalNotes": ""
+      },
+      "usage": {
+        "prompt_tokens": 24004,
+        "completion_tokens": 1111,
+        "total_tokens": 25115,
+        "cost_usd": 0.27337
+      }
+    }
+  },
+  "usage": {
+    "prompt_tokens": 24004,
+    "completion_tokens": 1111,
+    "total_tokens": 25115,
+    "cost_usd": 0.27337
+  },
+  "error": null
+}

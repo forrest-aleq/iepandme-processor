@@ -1,0 +1,18 @@
+{
+  "sourceFile": "KSJC IEPs Angel Sanchez.pdf",
+  "processingTime": 72500,
+  "timestamp": "2025-07-18T03:40:01.681Z",
+  "success": false,
+  "extractedData": null,
+  "metadata": {
+    "processing_time": "2025-07-18T03:40:01.681Z",
+    "models_used": [
+      "o4-mini",
+      "o4-mini-high",
+      "claude-4-opus"
+    ]
+  },
+  "rawResults": null,
+  "usage": null,
+  "error": "No extraction data available"
+}

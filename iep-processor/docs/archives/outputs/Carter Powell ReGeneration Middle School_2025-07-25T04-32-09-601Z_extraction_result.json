@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "error": "400 Invalid schema for response_format 'form_specific_iep_extraction': In context=('properties', 'IEP'), 'additionalProperties' is required to be supplied and to be false.",
+  "processingTime": 2297
+}

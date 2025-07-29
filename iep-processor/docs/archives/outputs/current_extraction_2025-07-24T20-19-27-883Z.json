@@ -1,0 +1,152 @@
+{
+  "sourceFile": "./samples/Carter Powell ReGeneration Middle School.pdf",
+  "processingTime": 57797,
+  "timestamp": "2025-07-24T20:19:27.884Z",
+  "model": "o4-mini-2025-04-16-responses",
+  "usage": {
+    "prompt_tokens": 59244,
+    "completion_tokens": 1512,
+    "total_tokens": 62612,
+    "cost_usd": 0.079988,
+    "reasoning_tokens": 1856
+  },
+  "extractedData": {
+    "metadata": {
+      "schemaVersion": "1.0",
+      "source": "Regeneration Middle School IEP",
+      "documentDate": "2025-05-13",
+      "parsedAt": "2025-07-24"
+    },
+    "studentInfo": {
+      "name": "Carter Powell",
+      "school": "Regeneration Middle School",
+      "grade": "5",
+      "gender": "Male",
+      "studentId": "1027",
+      "birthdate": "2013-11-22",
+      "district": "Cincinnati Public Schools",
+      "homeAddress": "2949 Westknolls Ln., Cincinnati, OH 45211"
+    },
+    "reviewDates": {
+      "annualReview": "2025-05-13",
+      "effectiveUntil": "2026-05-12"
+    },
+    "caseManager": {
+      "name": "",
+      "email": ""
+    },
+    "presentLevels": {
+      "academics": "Most Recent District Data: According to the most recent iReady diagnostic testing in reading and math in May 2025. In reading, Carter scored an overall Kindergarten level in the 2nd percentile. He scored in the kindergarten range in phonics, high frequency words, vocabulary, and comprehension of informational text. He scored in the first grade range for comprehension of literature. In math diagnostic test in May 2025 he scored a RIT score of 449 in the 20th percentile and scored in the 5th grade range in number operations, 1st grade in algebra/algebraic thinking, 4th grade in measurement/data and 4th grade in geometry.",
+      "adaptiveDailyLivingSkills": "Carter benefits from small group instruction and requires supports to progress in the general education classroom. He continues to also need breaks during extended periods of testing or instruction (over 50 minutes) to refocus.",
+      "communicationDevelopment": "",
+      "grossFineMotorDevelopment": "",
+      "health": "",
+      "socialEmotionalBehavioral": "Carter has had only one behavior logs this year that resulted in a suspension for a fight; this behavior is atypical. Attendance: Carter has missed 18 days and has been tardy 8 days this school year.",
+      "vocational": ""
+    },
+    "goals": [
+      {
+        "goalArea": "Reading Decoding",
+        "goalTopic": "Decoding and fluency",
+        "baseline": "teach kindergarten high frequency words; teach one to one letter correspondence with letters v, j, w, x, k, z, y; provide practice was decoding regularly spelled one syllable words with short vowel sounds",
+        "description": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+        "targetPercentage": 80,
+        "targetDate": "",
+        "additionalGoalAreas": [],
+        "shortTermObjectives": [
+          "Given a set of sentences, Carter will decode CVC words correctly with 80% accuracy in 3 out of 4 trials.",
+          "Given a set of sentences, Carter will decode high frequency sight words with 80% accuracy in 3 out of 4 trials.",
+          "Given a set of sentences, Carter will decode long vowel words with 80% accuracy in 3 out of 4 trials."
+        ]
+      },
+      {
+        "goalArea": "Reading Comprehension",
+        "goalTopic": "Main idea and supporting details",
+        "baseline": "with support draw conclusions or make inferences in read-aloud literary text or in pictures; with supports, compare and contrast characters or events within a literary text read aloud; with support, sequence pictures of two events or identify the beginning, middle, or end of literary text read aloud; with support, describe the relationship between pictures and the text in which they appear in a literary text read aloud; with support, identify examples of cause and effect using pictures or word in informational text read aloud",
+        "description": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+        "targetPercentage": 80,
+        "targetDate": "",
+        "additionalGoalAreas": [],
+        "shortTermObjectives": [
+          "Given a grade level text read aloud, Carter will determine the main idea of the text with 80% accuracy in 3 out of 4 trials.",
+          "Given a grade level text read aloud, Carter will highlight or underline at least one supporting detail that accurately supports the main idea with 80% accuracy in 3 out of 4 trials."
+        ]
+      },
+      {
+        "goalArea": "Math Application of Ratios",
+        "goalTopic": "Ratios",
+        "baseline": "solve addition problems for combining, joining or comparison situations; solve subtraction problems for separation or take away situations; demonstrate an understanding of the commutative and associative properties; represent and determine the unknown number in an addition or subtraction equation; build equations to represent real world addition and subtraction problems; demonstrate an understanding of the equal sign; add and subtract decimals through hundredths; round decimals to any place; multiply decimals by any whole number; multiply and divide decimal numbers through hundredths; multiply and divide mult-digit decimals by positive powers of 10; interpret fractions as the division of the numerator by the denominator; add and subtract fractions and mixed numbers with unlike numbers; multiply a whole number by a fraction; divide a unit fraction by a whole number or a whole number by a unit fraction; multiply fractional side lengths to find the area of rectangles; compare the size of the product of fractions to the size of one factor; explain why multiply a fraction by a given number results in a larger than 1 answer; multiply fractions; interpret (a/b) x q as part of a partition of q",
+        "description": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+        "targetPercentage": 80,
+        "targetDate": "",
+        "additionalGoalAreas": [],
+        "shortTermObjectives": [
+          "When given a set of multiplication problems up to 3 digits, Carter will solve the problems with 80% accuracy in 3 out of 4 trials.",
+          "When given a set of division problems, Carter will solve the problems correctly with 80% accuracy in 3 out of 4 trials.",
+          "When given a ratio problem, Carter will solve for the unit rate at 80% accuracy in 3 out of 4 trials."
+        ]
+      }
+    ],
+    "accommodations": [
+      {
+        "category": "Instructional",
+        "description": "small group testing and instruction of remedial skills, guided notes or anchor charts for new concepts",
+        "settings": [
+          "Resource Room"
+        ],
+        "subjects": []
+      },
+      {
+        "category": "Assessment",
+        "description": "extended time (2x typical peers), breaks during longer testing or assignment times, read aloud or text to speech that is at grade level or not on instructional level, calculator for tests that are not testing computation",
+        "settings": [],
+        "subjects": []
+      }
+    ],
+    "services": [
+      {
+        "type": "SPECIALLY DESIGNED INSTRUCTION",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "60 mins",
+        "location": "Resource Room"
+      },
+      {
+        "type": "SPECIALLY DESIGNED INSTRUCTION",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "30 minutes",
+        "location": "Resource Room"
+      },
+      {
+        "type": "SPECIALLY DESIGNED INSTRUCTION",
+        "provider": "Intervention Specialist",
+        "frequency": "per week",
+        "duration": "60 min",
+        "location": "Resource Room"
+      }
+    ],
+    "standardizedAssessments": [
+      {
+        "name": "iReady diagnostic testing in reading",
+        "date": "2025-05-xx",
+        "scores": {
+          "raw": "",
+          "percentile": "2nd",
+          "standardScore": "",
+          "gradeEquivalent": "Kindergarten"
+        }
+      },
+      {
+        "name": "iReady diagnostic testing in math",
+        "date": "2025-05-xx",
+        "scores": {
+          "raw": "RIT 449",
+          "percentile": "20th",
+          "standardScore": "449",
+          "gradeEquivalent": "5th grade"
+        }
+      }
+    ]
+  }
+}

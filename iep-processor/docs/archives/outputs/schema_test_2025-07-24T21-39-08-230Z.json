@@ -1,0 +1,627 @@
+{
+  "sourceFile": "./samples/Carter Powell ReGeneration Middle School.pdf",
+  "timestamp": "2025-07-24T21:39:08.233Z",
+  "model": "o4-mini-2025-04-16-schema-compliant",
+  "processingTime": 59093,
+  "usage": {
+    "prompt_tokens": 59986,
+    "completion_tokens": 4361,
+    "reasoning_tokens": 0,
+    "total_tokens": 64347,
+    "cost_usd": 0.085173
+  },
+  "validation": {
+    "valid": false,
+    "score": 0,
+    "issues": [
+      {
+        "field": "meta.doc_id",
+        "issue": "Missing document ID",
+        "severity": "warning"
+      },
+      {
+        "field": "meta.extracted_at",
+        "issue": "Missing extraction timestamp",
+        "severity": "warning"
+      },
+      {
+        "field": "student.first_name",
+        "issue": "Missing first name",
+        "severity": "error"
+      },
+      {
+        "field": "student.last_name",
+        "issue": "Missing last name",
+        "severity": "error"
+      },
+      {
+        "field": "student.student_id",
+        "issue": "Missing student ID",
+        "severity": "error"
+      },
+      {
+        "field": "student.school",
+        "issue": "Missing school name",
+        "severity": "error"
+      },
+      {
+        "field": "meeting.iep_start_date",
+        "issue": "Missing IEP start date",
+        "severity": "warning"
+      },
+      {
+        "field": "meeting.iep_end_date",
+        "issue": "Missing IEP end date",
+        "severity": "warning"
+      },
+      {
+        "field": "eligibility.primary_disability",
+        "issue": "Missing primary disability",
+        "severity": "warning"
+      },
+      {
+        "field": "present_levels.academic_achievement",
+        "issue": "Missing academic achievement description",
+        "severity": "error"
+      },
+      {
+        "field": "goals",
+        "issue": "No goals found",
+        "severity": "error"
+      },
+      {
+        "field": "services",
+        "issue": "No services found",
+        "severity": "warning"
+      }
+    ],
+    "fieldCompleteness": {
+      "meta.doc_id": false,
+      "meta.source": false,
+      "meta.version": false,
+      "meta.extracted_at": false,
+      "student.first_name": false,
+      "student.last_name": false,
+      "student.dob": false,
+      "student.student_id": false,
+      "student.grade": false,
+      "student.school": false,
+      "student.district": false,
+      "meeting.iep_start_date": false,
+      "meeting.iep_end_date": false,
+      "meeting.meeting_date": false,
+      "meeting.participants": false,
+      "eligibility.primary_disability": false,
+      "eligibility.secondary_disabilities": false,
+      "eligibility.eligibility_date": false,
+      "eligibility.reeval_due_date": false,
+      "present_levels.academic_achievement": false,
+      "present_levels.functional_performance": false,
+      "present_levels.strengths": false,
+      "present_levels.needs": false,
+      "present_levels.parent_input": false,
+      "goals": false,
+      "services": false,
+      "accommodations": false,
+      "modifications": false,
+      "assessment_participation.state_assessments": false,
+      "placement.lre_percentage_general_ed": false,
+      "placement.lre_description": false,
+      "placement.transportation": false,
+      "progress_reports": false,
+      "signatures": false
+    },
+    "summary": {
+      "totalFields": 34,
+      "completedFields": 0,
+      "missingCriticalFields": [
+        "student.first_name",
+        "student.last_name",
+        "student.student_id",
+        "student.school",
+        "goals",
+        "services",
+        "present_levels.academic_achievement"
+      ],
+      "missingOptionalFields": [
+        "meta.doc_id",
+        "meta.source",
+        "meta.version",
+        "meta.extracted_at",
+        "student.dob",
+        "student.grade",
+        "student.district",
+        "meeting.iep_start_date",
+        "meeting.iep_end_date",
+        "meeting.meeting_date",
+        "meeting.participants",
+        "eligibility.primary_disability",
+        "eligibility.secondary_disabilities",
+        "eligibility.eligibility_date",
+        "eligibility.reeval_due_date",
+        "present_levels.functional_performance",
+        "present_levels.strengths",
+        "present_levels.needs",
+        "present_levels.parent_input",
+        "accommodations",
+        "modifications",
+        "assessment_participation.state_assessments",
+        "placement.lre_percentage_general_ed",
+        "placement.lre_description",
+        "placement.transportation",
+        "progress_reports",
+        "signatures"
+      ]
+    }
+  },
+  "extractedData": {
+    "format": {
+      "type": "json_schema",
+      "description": null,
+      "name": "iep_schema_compliant_extraction",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "meta": {
+            "type": "object",
+            "properties": {
+              "doc_id": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "extracted_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "doc_id",
+              "source",
+              "version",
+              "extracted_at"
+            ],
+            "additionalProperties": false
+          },
+          "student": {
+            "type": "object",
+            "properties": {
+              "first_name": {
+                "type": "string"
+              },
+              "last_name": {
+                "type": "string"
+              },
+              "dob": {
+                "type": "string"
+              },
+              "student_id": {
+                "type": "string"
+              },
+              "grade": {
+                "type": "string"
+              },
+              "school": {
+                "type": "string"
+              },
+              "district": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "first_name",
+              "last_name",
+              "dob",
+              "student_id",
+              "grade",
+              "school",
+              "district"
+            ],
+            "additionalProperties": false
+          },
+          "meeting": {
+            "type": "object",
+            "properties": {
+              "iep_start_date": {
+                "type": "string"
+              },
+              "iep_end_date": {
+                "type": "string"
+              },
+              "meeting_date": {
+                "type": "string"
+              },
+              "participants": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "role": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "role"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "iep_start_date",
+              "iep_end_date",
+              "meeting_date",
+              "participants"
+            ],
+            "additionalProperties": false
+          },
+          "eligibility": {
+            "type": "object",
+            "properties": {
+              "primary_disability": {
+                "type": "string"
+              },
+              "secondary_disabilities": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "eligibility_date": {
+                "type": "string"
+              },
+              "reeval_due_date": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "primary_disability",
+              "secondary_disabilities",
+              "eligibility_date",
+              "reeval_due_date"
+            ],
+            "additionalProperties": false
+          },
+          "present_levels": {
+            "type": "object",
+            "properties": {
+              "academic_achievement": {
+                "type": "string"
+              },
+              "functional_performance": {
+                "type": "string"
+              },
+              "strengths": {
+                "type": "string"
+              },
+              "needs": {
+                "type": "string"
+              },
+              "parent_input": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "academic_achievement",
+              "functional_performance",
+              "strengths",
+              "needs",
+              "parent_input"
+            ],
+            "additionalProperties": false
+          },
+          "goals": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "area": {
+                  "type": "string"
+                },
+                "statement": {
+                  "type": "string"
+                },
+                "baseline": {
+                  "type": "string"
+                },
+                "criteria": {
+                  "type": "string"
+                },
+                "measurement_method": {
+                  "type": "string"
+                },
+                "progress_reporting_frequency": {
+                  "type": "string"
+                },
+                "short_term_objectives": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "statement": {
+                        "type": "string"
+                      },
+                      "criteria": {
+                        "type": "string"
+                      },
+                      "due_date": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "statement",
+                      "criteria",
+                      "due_date"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "area",
+                "statement",
+                "baseline",
+                "criteria",
+                "measurement_method",
+                "progress_reporting_frequency",
+                "short_term_objectives"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "services": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                },
+                "provider_role": {
+                  "type": "string"
+                },
+                "location": {
+                  "type": "string"
+                },
+                "frequency": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "number"
+                    },
+                    "unit": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                },
+                "duration_minutes": {
+                  "type": "number"
+                },
+                "group_size": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "type",
+                "provider_role",
+                "location",
+                "frequency",
+                "duration_minutes",
+                "group_size",
+                "start_date",
+                "end_date"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "accommodations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "context": {
+                  "type": "string"
+                },
+                "start_date": {
+                  "type": "string"
+                },
+                "end_date": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "description",
+                "context",
+                "start_date",
+                "end_date"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "modifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "context": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "id",
+                "description",
+                "context"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "assessment_participation": {
+            "type": "object",
+            "properties": {
+              "state_assessments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "participation": {
+                      "type": "string"
+                    },
+                    "accommodations": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "participation",
+                    "accommodations"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "state_assessments"
+            ],
+            "additionalProperties": false
+          },
+          "placement": {
+            "type": "object",
+            "properties": {
+              "lre_percentage_general_ed": {
+                "type": "number"
+              },
+              "lre_description": {
+                "type": "string"
+              },
+              "transportation": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "lre_percentage_general_ed",
+              "lre_description",
+              "transportation"
+            ],
+            "additionalProperties": false
+          },
+          "progress_reports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "goal_id": {
+                  "type": "string"
+                },
+                "date": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "evidence": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "goal_id",
+                "date",
+                "status",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "signatures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "role": {
+                  "type": "string"
+                },
+                "signed_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "role",
+                "signed_at"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "meta",
+          "student",
+          "meeting",
+          "eligibility",
+          "present_levels",
+          "goals",
+          "services",
+          "accommodations",
+          "modifications",
+          "assessment_participation",
+          "placement",
+          "progress_reports",
+          "signatures"
+        ],
+        "additionalProperties": false
+      },
+      "strict": true
+    }
+  }
+}

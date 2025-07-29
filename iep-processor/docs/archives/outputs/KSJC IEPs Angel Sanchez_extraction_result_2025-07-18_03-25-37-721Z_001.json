@@ -1,0 +1,326 @@
+{
+  "sourceFile": "KSJC IEPs Angel Sanchez.pdf",
+  "processingTime": 96985,
+  "timestamp": "2025-07-18T03:27:14.706Z",
+  "success": true,
+  "extractedData": {
+    "studentInfo": {
+      "name": "Angel Sanchez",
+      "id": "",
+      "grade": "10th grade",
+      "school": "KIPP San Jose Collegiate",
+      "district": "KIPP San Jose Collegiate",
+      "dob": "7/18/2004",
+      "age": "16 years 7 months",
+      "disability_category": [
+        "Autism (AUT)",
+        "Other Health Impairment (OHI)"
+      ],
+      "eligibility_date": "6/6/2011",
+      "iep_date": "3/8/2021",
+      "iep_review_date": "3/7/2021",
+      "parent_guardian": "AFRICA SANCHEZ, ENRIQUE SANCHEZ",
+      "parent_contact": "(408)287-2100, (408)659-5721, (408)568-2108"
+    },
+    "goals": [
+      {
+        "area": "Math Calculation",
+        "description": "When given a set of 5 linear equations with one variable (e.g. 2x + 12 = 5x) with whole numbers, Angel will simplify and solve for the variable with 80% accuracy in 4 out of 5 trials.",
+        "baseline": "Angel is practicing identifying the operations in an equation and the correct order of steps needed to solve.",
+        "target": "By 03/07/2022, when given a set of 5 linear equations with one variable (e.g. 2x + 12 = 5x) with whole numbers, Angel will simplify and solve for the variable with 80% accuracy in 4 out of 5 trials.",
+        "progress_measures": [],
+        "services": []
+      },
+      {
+        "area": "Counseling",
+        "description": "With coaching and counseling support, Angel will manage his thoughts and behaviors by reflecting on possible outcomes of his actions. He will utilize coping strategies (movement break, deep breathing, music break, deep pressure/heavy work activity, etc.) to self manage and avoid engaging in unwanted/dangerous behaviors with 4 out of 5 opportunities as measured by mental health clinician and teacher observations.",
+        "baseline": "Angel reports that he engages in certain behaviors that are potentially dangerous without thinking sometimes and that he knows, and would like, to change this behavior to be more safe.",
+        "target": "By 03/07/2022, with coaching and counseling support, Angel will manage his thoughts and behaviors by reflecting on possible outcomes of his actions. He will utilize coping strategies (movement break, deep breathing, music break, deep pressure/heavy work activity, etc.) to self manage and avoid engaging in unwanted/dangerous behaviors with 4 out of 5 opportunities as measured by mental health clinician and teacher observations.",
+        "progress_measures": [],
+        "services": []
+      },
+      {
+        "area": "College Awareness",
+        "description": "Angel will be able to independently identify three or more colleges or training programs that lead to his career of interest and the entrance requirements needed for each program.",
+        "baseline": "Angel has identified that he is interested in working on cars in design and building, but is continuing to identify programs in the area that will support him in achieving this goal.",
+        "target": "By 03/07/2022, Angel will be able to independently identify three or more colleges or training programs that lead to his career of interest and the entrance requirements needed for each program.",
+        "progress_measures": [],
+        "services": []
+      },
+      {
+        "area": "Career Awareness",
+        "description": "When presented with a blank job application form, Angel will be able to independently complete all portions of a job application with no more than 3 errors in 3 consecutive trials.",
+        "baseline": "Angel is able to complete about 30% of a blank job application with support from a teacher.",
+        "target": "By 03/07/2022, when presented with a blank job application form, Angel will be able to independently complete all portions of a job application with no more than 3 errors in 3 consecutive trials.",
+        "progress_measures": [],
+        "services": []
+      }
+    ],
+    "accommodations": [
+      {
+        "category": "Presentation",
+        "description": "Text to Speech, Text-to-Speech (Reading Passages)",
+        "settings": [
+          "All classes"
+        ],
+        "subjects": []
+      },
+      {
+        "category": "Response",
+        "description": "Speech-to-Text",
+        "settings": [
+          "All classes"
+        ],
+        "subjects": []
+      },
+      {
+        "category": "Supplementary Aids",
+        "description": "Graphic organizer, Extended time, Multiple or frequent breaks, Calculator, Preferred seating to reduce distractions",
+        "settings": [
+          "All classes"
+        ],
+        "subjects": []
+      },
+      {
+        "category": "Other",
+        "description": "Access to Chromebook and other virtual software (Google Classroom, Clever, etc.). It has been determined that Angel has a Chromebook that he can use at home. All students were offered a laptop by the school if they needed one during school closure. Per state, local, and school recommendations and mandates, distance learning will continue until it is safe to be back at school for students, staff, and families.",
+        "settings": [
+          "Home"
+        ],
+        "subjects": []
+      },
+      {
+        "category": "Modifications",
+        "description": "Modified Curriculum",
+        "settings": [
+          "General and special education classes"
+        ],
+        "subjects": []
+      }
+    ],
+    "services": [
+      {
+        "type": "Specialized Academic Instruction",
+        "provider": "District of Service",
+        "frequency": "1080 min x 1 Weekly",
+        "duration": "1080 min",
+        "location": "Charter Schools"
+      },
+      {
+        "type": "Individual counseling",
+        "provider": "District of Service",
+        "frequency": "30 min x 20 Yearly",
+        "duration": "600 min",
+        "location": "Charter Schools"
+      },
+      {
+        "type": "College awareness",
+        "provider": "District of Service",
+        "frequency": "30 min x 2 Yearly",
+        "duration": "60 min",
+        "location": "Separate classroom in public integrated facility"
+      },
+      {
+        "type": "Career awareness",
+        "provider": "District of Service",
+        "frequency": "30 min x 2 Yearly",
+        "duration": "60 min",
+        "location": "Separate classroom in public integrated facility"
+      }
+    ],
+    "presentLevels": {
+      "academic": "Angel is currently in 10th grade at KIPP San Jose Collegiate and participates in the Specialized Teaching Program (STP), which addresses academics skills as well as life and vocational skills through the a multi-fascated program in the school setting and community based instruction. Reading & Writing: Angel has shown significant difficulties in reading, including reading aloud, and writing (typing the virtual learning setting). Angel often uses his phone for the speech-to-text function and then copies the words into the computer document he's working on. Angel shows significantly increased comprehension when he hears a text and engages in a verbal discussion about a topic in class. Math: Angel is able to complete problems using basic addition, subtraction, multiplication, and division. When asked to complete problems in a pre-algebra or algebra curriculum, including those with variables and graphing needs, Angel tends to utilize avoidance tactics in a larger group or share that he is confused and ask follow up questions in a smaller group or 1-1 setting. Cinema & Media Class: Angel responds quickly when I ask him questions or assign him to do something. He will also (occasionally) contribute to conversations in class via the chat. I don't have any major areas of concern. I would love to see Angel participate more frequently when he is in the full-class setting. When he has shared a thought, it has been clear and concise. I would really like to see Angel flex those discussion skills a little more. Angel is also absent from class every once in a while. Angel is pretty quiet in class unless I engage him directly. But he is always pleasant and usually attends class.",
+      "functional": "Angel is able to navigate his computer and phone independently and speaks of enjoying football and other sports. This is not an area of concern at this time.",
+      "social": "Angel does not display significant social-emotional or behavioral concerns in the virtual learning classroom environment. However, in 1-1 sessions Angel has shared that he struggles with making safe choices, surrounding himself with positively influential peers, and that he takes medication for mental health needs. Angel reported that he is involved in a criminal investigation and that he has been diagnosed with either Multiple Personality Disorder or Schizophrenia, for which he takes medication daily."
+    },
+    "transitionPlan": "Upon completion of school Angel will identify 3 schools or training programs that include his program of interest. Transition Service Code: 890 Other Transition Service. Activities to Support Post Secondary Goal: practicing online research, connecting with others in the field (networking). Community Experiences: community based instruction, including visiting local community colleges and training programs. Linked to Annual Goal #2. Related Services: 330 Specialized Academic Instruction. Person/Agency Responsible: Education Specialist. Upon completion of school Angel will obtain a part- or full-time job in a field of his interest. Transition Service Code: 890 Other Transition Service. Activities to Support Post Secondary Goal: Complete job applications and mock interviews. Community Experiences: community based instruction. Linked to Annual Goal #2. Related Services: 330 Specialized Academic Instruction. Person/Agency Responsible: Education Specialist.",
+    "behaviorPlan": "",
+    "placementJustification": "Angel is in his 10th grad year at KIPP San Jose Collegiate. The team considered the continuum of services, such as general education, specialized academic instruction through push-in and/or pull-out support, speech/language therapy, occupational therapy, adapted PE, and a Special Day Class (SDC) setting. The team determined that the most appropriate placement for Angel is KIPP San Jose Collegiate high school's Specialized Teaching Program (STP). STP is a Special Day Class with modified curriculum that focuses on functional academics and adaptive skills. This classroom has a low student to teacher ratio and also has a strong vocational and community-based instruction component. Within STP, Angel will participate in meaningful general education classes like lunch, Math Foundations, English Foundations, and Cinema & Media. He will also receive pulled-out/push-in for therapy services: counseling. He is on modified curriculum and working toward a Certificate of Completion.",
+    "assessmentAccommodations": [
+      "Alternate Assessment with Designated Supports Embedded: Masking, Text To Speech, Items",
+      "Alternate Assessment with Designated Supports Non- Embedded: 100s number table, Calculator, Multiplication Table, Read Aloud, Science charts (State approved only, i.e., periodic table of the elements and reference sheets.), Scribe, Separate Setting (i.e., most beneficial time, special lighting or acoustics, adaptive furniture), Simplified Test Directions"
+    ],
+    "teamMembers": [
+      "Angel Sanchez (student)",
+      "Africa Sanchez (mother)",
+      "America Munson (Spanish interpreter)",
+      "Kyle Markwalter (Cinema and Media general education teacher)",
+      "Bridgette Leslie (Education Specialist/ Case Manager)",
+      "Kim Vo (Assistant Principal/LEA Representative)",
+      "Kate Birbilis (Program Specialist)",
+      "Miguel Serrano (school psychologist/counselor)"
+    ],
+    "additionalNotes": "Angel's mother and sister mentioned that Angel needed a greater amount of support in Reading and writing although he struggles in every subject. Angel's sister said Angel has a hard time doing things on his own. He has difficulty accessing his computer and on assignments he often doesn't know where to start. He does better with in person instruction as he struggled to attend school to begin with. Not getting a hold of his daily schedule causes frustration and when he gets too frustrated he can be self-harming. The team discussed Angels needs and it was shown that his goals and high SAI minutes outside of the general education classroom need added support."
+  },
+  "metadata": {
+    "claude_confidence": 80,
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "processing_time": "2025-07-18T03:27:14.706Z",
+    "models_used": [
+      "claude-4-opus"
+    ]
+  },
+  "rawResults": {
+    "claude": {
+      "studentInfo": {
+        "name": "Angel Sanchez",
+        "id": "",
+        "grade": "10th grade",
+        "school": "KIPP San Jose Collegiate",
+        "district": "KIPP San Jose Collegiate",
+        "dob": "7/18/2004",
+        "age": "16 years 7 months",
+        "disability_category": [
+          "Autism (AUT)",
+          "Other Health Impairment (OHI)"
+        ],
+        "eligibility_date": "6/6/2011",
+        "iep_date": "3/8/2021",
+        "iep_review_date": "3/7/2021",
+        "parent_guardian": "AFRICA SANCHEZ, ENRIQUE SANCHEZ",
+        "parent_contact": "(408)287-2100, (408)659-5721, (408)568-2108"
+      },
+      "goals": [
+        {
+          "area": "Math Calculation",
+          "description": "When given a set of 5 linear equations with one variable (e.g. 2x + 12 = 5x) with whole numbers, Angel will simplify and solve for the variable with 80% accuracy in 4 out of 5 trials.",
+          "baseline": "Angel is practicing identifying the operations in an equation and the correct order of steps needed to solve.",
+          "target": "By 03/07/2022, when given a set of 5 linear equations with one variable (e.g. 2x + 12 = 5x) with whole numbers, Angel will simplify and solve for the variable with 80% accuracy in 4 out of 5 trials.",
+          "progress_measures": [],
+          "services": []
+        },
+        {
+          "area": "Counseling",
+          "description": "With coaching and counseling support, Angel will manage his thoughts and behaviors by reflecting on possible outcomes of his actions. He will utilize coping strategies (movement break, deep breathing, music break, deep pressure/heavy work activity, etc.) to self manage and avoid engaging in unwanted/dangerous behaviors with 4 out of 5 opportunities as measured by mental health clinician and teacher observations.",
+          "baseline": "Angel reports that he engages in certain behaviors that are potentially dangerous without thinking sometimes and that he knows, and would like, to change this behavior to be more safe.",
+          "target": "By 03/07/2022, with coaching and counseling support, Angel will manage his thoughts and behaviors by reflecting on possible outcomes of his actions. He will utilize coping strategies (movement break, deep breathing, music break, deep pressure/heavy work activity, etc.) to self manage and avoid engaging in unwanted/dangerous behaviors with 4 out of 5 opportunities as measured by mental health clinician and teacher observations.",
+          "progress_measures": [],
+          "services": []
+        },
+        {
+          "area": "College Awareness",
+          "description": "Angel will be able to independently identify three or more colleges or training programs that lead to his career of interest and the entrance requirements needed for each program.",
+          "baseline": "Angel has identified that he is interested in working on cars in design and building, but is continuing to identify programs in the area that will support him in achieving this goal.",
+          "target": "By 03/07/2022, Angel will be able to independently identify three or more colleges or training programs that lead to his career of interest and the entrance requirements needed for each program.",
+          "progress_measures": [],
+          "services": []
+        },
+        {
+          "area": "Career Awareness",
+          "description": "When presented with a blank job application form, Angel will be able to independently complete all portions of a job application with no more than 3 errors in 3 consecutive trials.",
+          "baseline": "Angel is able to complete about 30% of a blank job application with support from a teacher.",
+          "target": "By 03/07/2022, when presented with a blank job application form, Angel will be able to independently complete all portions of a job application with no more than 3 errors in 3 consecutive trials.",
+          "progress_measures": [],
+          "services": []
+        }
+      ],
+      "accommodations": [
+        {
+          "category": "Presentation",
+          "description": "Text to Speech, Text-to-Speech (Reading Passages)",
+          "settings": [
+            "All classes"
+          ],
+          "subjects": []
+        },
+        {
+          "category": "Response",
+          "description": "Speech-to-Text",
+          "settings": [
+            "All classes"
+          ],
+          "subjects": []
+        },
+        {
+          "category": "Supplementary Aids",
+          "description": "Graphic organizer, Extended time, Multiple or frequent breaks, Calculator, Preferred seating to reduce distractions",
+          "settings": [
+            "All classes"
+          ],
+          "subjects": []
+        },
+        {
+          "category": "Other",
+          "description": "Access to Chromebook and other virtual software (Google Classroom, Clever, etc.). It has been determined that Angel has a Chromebook that he can use at home. All students were offered a laptop by the school if they needed one during school closure. Per state, local, and school recommendations and mandates, distance learning will continue until it is safe to be back at school for students, staff, and families.",
+          "settings": [
+            "Home"
+          ],
+          "subjects": []
+        },
+        {
+          "category": "Modifications",
+          "description": "Modified Curriculum",
+          "settings": [
+            "General and special education classes"
+          ],
+          "subjects": []
+        }
+      ],
+      "services": [
+        {
+          "type": "Specialized Academic Instruction",
+          "provider": "District of Service",
+          "frequency": "1080 min x 1 Weekly",
+          "duration": "1080 min",
+          "location": "Charter Schools"
+        },
+        {
+          "type": "Individual counseling",
+          "provider": "District of Service",
+          "frequency": "30 min x 20 Yearly",
+          "duration": "600 min",
+          "location": "Charter Schools"
+        },
+        {
+          "type": "College awareness",
+          "provider": "District of Service",
+          "frequency": "30 min x 2 Yearly",
+          "duration": "60 min",
+          "location": "Separate classroom in public integrated facility"
+        },
+        {
+          "type": "Career awareness",
+          "provider": "District of Service",
+          "frequency": "30 min x 2 Yearly",
+          "duration": "60 min",
+          "location": "Separate classroom in public integrated facility"
+        }
+      ],
+      "presentLevels": {
+        "academic": "Angel is currently in 10th grade at KIPP San Jose Collegiate and participates in the Specialized Teaching Program (STP), which addresses academics skills as well as life and vocational skills through the a multi-fascated program in the school setting and community based instruction. Reading & Writing: Angel has shown significant difficulties in reading, including reading aloud, and writing (typing the virtual learning setting). Angel often uses his phone for the speech-to-text function and then copies the words into the computer document he's working on. Angel shows significantly increased comprehension when he hears a text and engages in a verbal discussion about a topic in class. Math: Angel is able to complete problems using basic addition, subtraction, multiplication, and division. When asked to complete problems in a pre-algebra or algebra curriculum, including those with variables and graphing needs, Angel tends to utilize avoidance tactics in a larger group or share that he is confused and ask follow up questions in a smaller group or 1-1 setting. Cinema & Media Class: Angel responds quickly when I ask him questions or assign him to do something. He will also (occasionally) contribute to conversations in class via the chat. I don't have any major areas of concern. I would love to see Angel participate more frequently when he is in the full-class setting. When he has shared a thought, it has been clear and concise. I would really like to see Angel flex those discussion skills a little more. Angel is also absent from class every once in a while. Angel is pretty quiet in class unless I engage him directly. But he is always pleasant and usually attends class.",
+        "functional": "Angel is able to navigate his computer and phone independently and speaks of enjoying football and other sports. This is not an area of concern at this time.",
+        "social": "Angel does not display significant social-emotional or behavioral concerns in the virtual learning classroom environment. However, in 1-1 sessions Angel has shared that he struggles with making safe choices, surrounding himself with positively influential peers, and that he takes medication for mental health needs. Angel reported that he is involved in a criminal investigation and that he has been diagnosed with either Multiple Personality Disorder or Schizophrenia, for which he takes medication daily."
+      },
+      "transitionPlan": "Upon completion of school Angel will identify 3 schools or training programs that include his program of interest. Transition Service Code: 890 Other Transition Service. Activities to Support Post Secondary Goal: practicing online research, connecting with others in the field (networking). Community Experiences: community based instruction, including visiting local community colleges and training programs. Linked to Annual Goal #2. Related Services: 330 Specialized Academic Instruction. Person/Agency Responsible: Education Specialist. Upon completion of school Angel will obtain a part- or full-time job in a field of his interest. Transition Service Code: 890 Other Transition Service. Activities to Support Post Secondary Goal: Complete job applications and mock interviews. Community Experiences: community based instruction. Linked to Annual Goal #2. Related Services: 330 Specialized Academic Instruction. Person/Agency Responsible: Education Specialist.",
+      "behaviorPlan": "",
+      "placementJustification": "Angel is in his 10th grad year at KIPP San Jose Collegiate. The team considered the continuum of services, such as general education, specialized academic instruction through push-in and/or pull-out support, speech/language therapy, occupational therapy, adapted PE, and a Special Day Class (SDC) setting. The team determined that the most appropriate placement for Angel is KIPP San Jose Collegiate high school's Specialized Teaching Program (STP). STP is a Special Day Class with modified curriculum that focuses on functional academics and adaptive skills. This classroom has a low student to teacher ratio and also has a strong vocational and community-based instruction component. Within STP, Angel will participate in meaningful general education classes like lunch, Math Foundations, English Foundations, and Cinema & Media. He will also receive pulled-out/push-in for therapy services: counseling. He is on modified curriculum and working toward a Certificate of Completion.",
+      "assessmentAccommodations": [
+        "Alternate Assessment with Designated Supports Embedded: Masking, Text To Speech, Items",
+        "Alternate Assessment with Designated Supports Non- Embedded: 100s number table, Calculator, Multiplication Table, Read Aloud, Science charts (State approved only, i.e., periodic table of the elements and reference sheets.), Scribe, Separate Setting (i.e., most beneficial time, special lighting or acoustics, adaptive furniture), Simplified Test Directions"
+      ],
+      "teamMembers": [
+        "Angel Sanchez (student)",
+        "Africa Sanchez (mother)",
+        "America Munson (Spanish interpreter)",
+        "Kyle Markwalter (Cinema and Media general education teacher)",
+        "Bridgette Leslie (Education Specialist/ Case Manager)",
+        "Kim Vo (Assistant Principal/LEA Representative)",
+        "Kate Birbilis (Program Specialist)",
+        "Miguel Serrano (school psychologist/counselor)"
+      ],
+      "additionalNotes": "Angel's mother and sister mentioned that Angel needed a greater amount of support in Reading and writing although he struggles in every subject. Angel's sister said Angel has a hard time doing things on his own. He has difficulty accessing his computer and on assignments he often doesn't know where to start. He does better with in person instruction as he struggled to attend school to begin with. Not getting a hold of his daily schedule causes frustration and when he gets too frustrated he can be self-harming. The team discussed Angels needs and it was shown that his goals and high SAI minutes outside of the general education classroom need added support."
+    },
+    "o4_mini": null
+  },
+  "usage": {
+    "prompt_tokens": 14832,
+    "completion_tokens": 2000,
+    "total_tokens": 16832,
+    "cost_usd": 0.05
+  },
+  "error": null
+}

@@ -1,0 +1,276 @@
+{
+  "sourceFile": "Carter Powell ReGeneration Middle School.pdf",
+  "processingTime": 77433,
+  "timestamp": "2025-07-18T03:26:55.152Z",
+  "success": true,
+  "extractedData": {
+    "studentInfo": {
+      "name": "Carter Powell",
+      "id": "1027",
+      "grade": "5",
+      "school": "Regeneration Middle School",
+      "district": "Cincinnati Public Schools",
+      "dob": "11/22/2013",
+      "age": "",
+      "disability_category": [],
+      "eligibility_date": "",
+      "iep_date": "05/13/2025",
+      "iep_review_date": "05/12/2026",
+      "parent_guardian": "Anissa Powell, Desmond Dixon",
+      "parent_contact": "5132950351, 5138027111"
+    },
+    "goals": [
+      {
+        "area": "Reading Decoding",
+        "description": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+        "baseline": "According to the most recent iReady diagnostic testing in reading and math in May 2025. In reading, Carter scored an overall Kindergarten level in the 2nd percentile. He scored in the kindergarten range in phonics and high frequency words. A breakdown of his scores show that he is able to do the following skills: recognize lower and uppercase letters, match consonant sounds to letters s, f, r, m, p, l, t, d, n, g, b, c, h in isolation, match short vowel sounds a and i in isolation.",
+        "target": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+        "progress_measures": [
+          "Curriculum-Based Assessment",
+          "Portfolios",
+          "Observation",
+          "Anecdotal Records",
+          "Short-Cycle Assessments",
+          "Performance Assessments",
+          "Checklists",
+          "Running Records",
+          "Work Samples",
+          "Inventories",
+          "Rubrics"
+        ],
+        "services": []
+      },
+      {
+        "area": "Reading Comprehension",
+        "description": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+        "baseline": "He scored in the kindergarten range in vocabulary, and comprehension of informational text. He scored in the first grade range for comprehension of literature. A breakdown of his scores show that he is able to do the following skills: with support draw conclusions or make inferences in read-aloud literary text or in pictures, with supports, compare and contrast characters or events within a literary text read aloud, with support, sequence pictures of two events or identify the beginning, middle, or end of literary text read aloud, with support, describe the relationship between pictures and the text in which they appear in a liteary text read aloud, with support, identify examples of cause and effect using pictures or word in informational text read aloud.",
+        "target": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+        "progress_measures": [
+          "Curriculum-Based Assessment",
+          "Portfolios",
+          "Observation",
+          "Anecdotal Records",
+          "Short-Cycle Assessments",
+          "Performance Assessments",
+          "Checklists",
+          "Running Records",
+          "Work Samples",
+          "Inventories",
+          "Rubrics"
+        ],
+        "services": []
+      },
+      {
+        "area": "",
+        "description": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+        "baseline": "Carter took the math diagnostic test in May 2025. He went up 49 points in his score from the previous assessment to a RIT score of 449. (On grade level minimum is 480). This placed him in the 20th percentile. He scored in the 5th grade range in number operations, 1st grade in algebra/algebraic thinking, 4th grade in measurement/data and 4th grade in geometry. Skills that Carter can do are the following: multiply multi-digit numbers, divide four digit numbers by two digit numbers, compare two decimals through thousandths, find combinations of 10 and identify missing addends, find different number pairs with the same sum for sums to 10, use equations to joining and take away problems with number to 10",
+        "target": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+        "progress_measures": [
+          "Curriculum-Based Assessment",
+          "Portfolios",
+          "Observation",
+          "Anecdotal Records",
+          "Short-Cycle Assessments",
+          "Performance Assessments",
+          "Checklists",
+          "Running Records",
+          "Work Samples",
+          "Inventories",
+          "Rubrics"
+        ],
+        "services": []
+      }
+    ],
+    "accommodations": [
+      {
+        "category": "",
+        "description": "extended time (2x typical peers), small group testing and instruction of remedial skills, breaks during longer testing or assignment times, guided notes or anchor charts for new concepts, read aloud or text to speech that is at grade level or not on instructional level, calculator for tests that are not testing computation.",
+        "settings": [],
+        "subjects": []
+      }
+    ],
+    "services": [
+      {
+        "type": "small group direct instruction in the area of reading decoding focusing on decoding short and long vowel sounds through systematic instruction in phonics, repeated instruction, guided practice, and teacher feedback.",
+        "provider": "Intervention Specialist",
+        "frequency": "60 mins per week",
+        "duration": "05/13/2025 - 05/12/2026",
+        "location": "Resource Room"
+      },
+      {
+        "type": "Small group direct instruction in the area of reading comprehension focusing on main idea through guided practice, teacher feedback, and repeated practice.",
+        "provider": "Intervention Specialist",
+        "frequency": "30 minutes per week",
+        "duration": "05/13/2025 - 05/12/2026",
+        "location": "Resource Room"
+      },
+      {
+        "type": "small group direct instruction in the area of math application of ratios though guided instruction, repeated practice, teacher feedback, and anchor charts",
+        "provider": "Intervention Specialist",
+        "frequency": "60 min per week",
+        "duration": "05/13/2025 - 05/12/2026",
+        "location": "Resource Room"
+      }
+    ],
+    "presentLevels": {
+      "academic": "Carter benefits from small group instruction and requires supports to progress in the general education classroom. Carter is a pleasant student to work with normally. He does need specific supports such as guided instruction, repeated instruction and feedback to make progress. He continues to also need breaks during extended periods of testing or instruction (over 50 minutes) to refocus.",
+      "functional": "",
+      "social": "Carter has had only one behavior logs this year that resulted in a suspension. This was for a fight between him and another student. This behavior is atypical as it is the only log all year regarding Carter's behavior."
+    },
+    "transitionPlan": "",
+    "behaviorPlan": "",
+    "placementJustification": "The team considered general education instruction for Carter to receive direct instruction on his goals, however the team felt that Carter requires a space that allows him to focus on repeated practice, guided practice and systematic instruction, especially in the area of reading fluency. The team decided that he would receive specially designed instruction in a designated intervention area.",
+    "assessmentAccommodations": [
+      "text to speech, small group, extended time (2x typical peers), breaks during testing to allow for refocus.",
+      "text to speech, small group, extended time (2x typical peers), breaks during testing to allow for refocus, calculator"
+    ],
+    "teamMembers": [],
+    "additionalNotes": ""
+  },
+  "metadata": {
+    "claude_confidence": 79,
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "processing_time": "2025-07-18T03:26:55.152Z",
+    "models_used": [
+      "claude-4-opus"
+    ]
+  },
+  "rawResults": {
+    "claude": {
+      "studentInfo": {
+        "name": "Carter Powell",
+        "id": "1027",
+        "grade": "5",
+        "school": "Regeneration Middle School",
+        "district": "Cincinnati Public Schools",
+        "dob": "11/22/2013",
+        "age": "",
+        "disability_category": [],
+        "eligibility_date": "",
+        "iep_date": "05/13/2025",
+        "iep_review_date": "05/12/2026",
+        "parent_guardian": "Anissa Powell, Desmond Dixon",
+        "parent_contact": "5132950351, 5138027111"
+      },
+      "goals": [
+        {
+          "area": "Reading Decoding",
+          "description": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+          "baseline": "According to the most recent iReady diagnostic testing in reading and math in May 2025. In reading, Carter scored an overall Kindergarten level in the 2nd percentile. He scored in the kindergarten range in phonics and high frequency words. A breakdown of his scores show that he is able to do the following skills: recognize lower and uppercase letters, match consonant sounds to letters s, f, r, m, p, l, t, d, n, g, b, c, h in isolation, match short vowel sounds a and i in isolation.",
+          "target": "Given a timed reading passage, Carter will decode and read fluently with 85 correct words per minute at 80% accuracy in 3 out of 4 trials.",
+          "progress_measures": [
+            "Curriculum-Based Assessment",
+            "Portfolios",
+            "Observation",
+            "Anecdotal Records",
+            "Short-Cycle Assessments",
+            "Performance Assessments",
+            "Checklists",
+            "Running Records",
+            "Work Samples",
+            "Inventories",
+            "Rubrics"
+          ],
+          "services": []
+        },
+        {
+          "area": "Reading Comprehension",
+          "description": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+          "baseline": "He scored in the kindergarten range in vocabulary, and comprehension of informational text. He scored in the first grade range for comprehension of literature. A breakdown of his scores show that he is able to do the following skills: with support draw conclusions or make inferences in read-aloud literary text or in pictures, with supports, compare and contrast characters or events within a literary text read aloud, with support, sequence pictures of two events or identify the beginning, middle, or end of literary text read aloud, with support, describe the relationship between pictures and the text in which they appear in a liteary text read aloud, with support, identify examples of cause and effect using pictures or word in informational text read aloud.",
+          "target": "Given a grade level text read aloud, Carter will determine the main idea of the text with at least one supporting detail with 80% accuracy in 3 out of 4 trials.",
+          "progress_measures": [
+            "Curriculum-Based Assessment",
+            "Portfolios",
+            "Observation",
+            "Anecdotal Records",
+            "Short-Cycle Assessments",
+            "Performance Assessments",
+            "Checklists",
+            "Running Records",
+            "Work Samples",
+            "Inventories",
+            "Rubrics"
+          ],
+          "services": []
+        },
+        {
+          "area": "",
+          "description": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+          "baseline": "Carter took the math diagnostic test in May 2025. He went up 49 points in his score from the previous assessment to a RIT score of 449. (On grade level minimum is 480). This placed him in the 20th percentile. He scored in the 5th grade range in number operations, 1st grade in algebra/algebraic thinking, 4th grade in measurement/data and 4th grade in geometry. Skills that Carter can do are the following: multiply multi-digit numbers, divide four digit numbers by two digit numbers, compare two decimals through thousandths, find combinations of 10 and identify missing addends, find different number pairs with the same sum for sums to 10, use equations to joining and take away problems with number to 10",
+          "target": "Given a set of problems involving ratios, Carter will use multiplication properties or division properties to convert equivalent ratios with 80% accuracy in 3 out of 4 trials.",
+          "progress_measures": [
+            "Curriculum-Based Assessment",
+            "Portfolios",
+            "Observation",
+            "Anecdotal Records",
+            "Short-Cycle Assessments",
+            "Performance Assessments",
+            "Checklists",
+            "Running Records",
+            "Work Samples",
+            "Inventories",
+            "Rubrics"
+          ],
+          "services": []
+        }
+      ],
+      "accommodations": [
+        {
+          "category": "",
+          "description": "extended time (2x typical peers), small group testing and instruction of remedial skills, breaks during longer testing or assignment times, guided notes or anchor charts for new concepts, read aloud or text to speech that is at grade level or not on instructional level, calculator for tests that are not testing computation.",
+          "settings": [],
+          "subjects": []
+        }
+      ],
+      "services": [
+        {
+          "type": "small group direct instruction in the area of reading decoding focusing on decoding short and long vowel sounds through systematic instruction in phonics, repeated instruction, guided practice, and teacher feedback.",
+          "provider": "Intervention Specialist",
+          "frequency": "60 mins per week",
+          "duration": "05/13/2025 - 05/12/2026",
+          "location": "Resource Room"
+        },
+        {
+          "type": "Small group direct instruction in the area of reading comprehension focusing on main idea through guided practice, teacher feedback, and repeated practice.",
+          "provider": "Intervention Specialist",
+          "frequency": "30 minutes per week",
+          "duration": "05/13/2025 - 05/12/2026",
+          "location": "Resource Room"
+        },
+        {
+          "type": "small group direct instruction in the area of math application of ratios though guided instruction, repeated practice, teacher feedback, and anchor charts",
+          "provider": "Intervention Specialist",
+          "frequency": "60 min per week",
+          "duration": "05/13/2025 - 05/12/2026",
+          "location": "Resource Room"
+        }
+      ],
+      "presentLevels": {
+        "academic": "Carter benefits from small group instruction and requires supports to progress in the general education classroom. Carter is a pleasant student to work with normally. He does need specific supports such as guided instruction, repeated instruction and feedback to make progress. He continues to also need breaks during extended periods of testing or instruction (over 50 minutes) to refocus.",
+        "functional": "",
+        "social": "Carter has had only one behavior logs this year that resulted in a suspension. This was for a fight between him and another student. This behavior is atypical as it is the only log all year regarding Carter's behavior."
+      },
+      "transitionPlan": "",
+      "behaviorPlan": "",
+      "placementJustification": "The team considered general education instruction for Carter to receive direct instruction on his goals, however the team felt that Carter requires a space that allows him to focus on repeated practice, guided practice and systematic instruction, especially in the area of reading fluency. The team decided that he would receive specially designed instruction in a designated intervention area.",
+      "assessmentAccommodations": [
+        "text to speech, small group, extended time (2x typical peers), breaks during testing to allow for refocus.",
+        "text to speech, small group, extended time (2x typical peers), breaks during testing to allow for refocus, calculator"
+      ],
+      "teamMembers": [],
+      "additionalNotes": ""
+    },
+    "o4_mini": null
+  },
+  "usage": {
+    "prompt_tokens": 25186,
+    "completion_tokens": 2000,
+    "total_tokens": 27186,
+    "cost_usd": 0.05
+  },
+  "error": null
+}

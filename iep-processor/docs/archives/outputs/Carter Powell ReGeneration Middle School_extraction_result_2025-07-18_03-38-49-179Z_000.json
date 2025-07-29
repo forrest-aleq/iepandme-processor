@@ -1,0 +1,18 @@
+{
+  "sourceFile": "Carter Powell ReGeneration Middle School.pdf",
+  "processingTime": 57027,
+  "timestamp": "2025-07-18T03:39:46.206Z",
+  "success": false,
+  "extractedData": null,
+  "metadata": {
+    "processing_time": "2025-07-18T03:39:46.206Z",
+    "models_used": [
+      "o4-mini",
+      "o4-mini-high",
+      "claude-4-opus"
+    ]
+  },
+  "rawResults": null,
+  "usage": null,
+  "error": "No extraction data available"
+}
