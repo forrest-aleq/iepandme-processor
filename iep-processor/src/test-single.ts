@@ -1,4 +1,5 @@
-import { processIEPDocument, IEPData } from './index';
+import { processIEP } from './main';
+import { FormSpecificIEPData } from './types/form-specific-iep-data';
 import chalk from 'chalk';
 import ora from 'ora';
 import fs from 'fs';
@@ -47,7 +48,7 @@ async function testSingleFile(): Promise<void> {
     // Process the document
     spinner.text = '⚙️ Running IEP extraction (this may take 30-60 seconds)...';
     
-    const result = await processIEPDocument(filePath, fileType);
+    const result = await processIEP(filePath, { reasoningEffort: 'medium' });
     const processingTime = (Date.now() - startTime) / 1000;
     
     // Write results to file regardless of success/failure
@@ -111,7 +112,7 @@ async function testSingleFile(): Promise<void> {
       console.log(chalk.yellow('─'.repeat(50)));
       
       // Calculate stats from result data - ensure safe access with null/undefined checks
-      const data = result.data || {} as IEPData; // Type assertion to make TypeScript happy
+      const data = result.data || {} as FormSpecificIEPData; // Type assertion to make TypeScript happy
       const fieldStats = [
         ['Category', 'Found', 'Items'],
         ['Student Info', data.studentInfo ? 'YES' : 'NO', 'N/A'],

@@ -1,0 +1,369 @@
+{
+    "$id": "https://aleq.dev/schemas/iep/v1.1.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "IEP Canonical Schema (v1.1)",
+    "type": "object",
+    "required": [
+      "metadata",
+      "studentInfo",
+      "eligibility",
+      "timelines",
+      "meeting",
+      "presentLevels",
+      "goals",
+      "services",
+      "accommodations",
+      "placementLRE",
+      "testingParticipation",
+      "progressReporting"
+    ],
+    "properties": {
+      "metadata": {
+        "type": "object",
+        "required": ["schemaVersion", "source", "documentDate", "parsedAt"],
+        "properties": {
+          "schemaVersion": { "type": "string", "const": "1.1" },
+          "source": { "type": "string" },
+          "documentDate": { "type": "string", "format": "date" },
+          "parsedAt": { "type": "string", "format": "date-time" },
+          "districtId": { "type": ["string", "null"] },
+          "originalFilename": { "type": ["string", "null"] },
+          "ocrConfidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+        }
+      },
+  
+      "studentInfo": {
+        "type": "object",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "firstName": { "type": ["string", "null"] },
+          "lastName": { "type": ["string", "null"] },
+          "birthdate": { "type": ["string", "null"], "format": "date" },
+          "studentId": { "type": ["string", "null"] },
+          "grade": { "type": ["string", "null"] },
+          "school": { "type": ["string", "null"] },
+          "district": { "type": ["string", "null"] },
+          "primaryLanguage": { "type": ["string", "null"] },
+          "address": { "type": ["string", "null"] },
+          "gender": { "type": ["string", "null"] },
+          "ethnicity": { "type": ["string", "null"] },
+          "parentGuardians": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "required": ["name", "relationship"],
+              "properties": {
+                "name": { "type": "string" },
+                "relationship": { "type": "string" },
+                "phone": { "type": ["string", "null"] },
+                "email": { "type": ["string", "null"] },
+                "address": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      },
+  
+      "eligibility": {
+        "type": "object",
+        "required": ["primaryDisability"],
+        "properties": {
+          "primaryDisability": { "type": "string" },
+          "secondaryDisabilities": {
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          },
+          "eligibilityDate": { "type": ["string", "null"], "format": "date" },
+          "eligibilityDecision": { "type": ["string", "null"] },
+          "evaluationType": { "type": ["string", "null"] }  /* initial / triennial / interim */
+        }
+      },
+  
+      "timelines": {
+        "type": "object",
+        "properties": {
+          "iepStartDate": { "type": ["string", "null"], "format": "date" },
+          "iepEndDate": { "type": ["string", "null"], "format": "date" },
+          "annualReviewDue": { "type": ["string", "null"], "format": "date" },
+          "triennialReviewDue": { "type": ["string", "null"], "format": "date" },
+          "lastEvaluationDate": { "type": ["string", "null"], "format": "date" },
+          "nextEvaluationDue": { "type": ["string", "null"], "format": "date" }
+        }
+      },
+  
+      "meeting": {
+        "type": "object",
+        "properties": {
+          "meetingDate": { "type": ["string", "null"], "format": "date" },
+          "meetingType": { "type": ["string", "null"] }, /* annual, amendment, etc. */
+          "participants": {
+            "type": ["array", "null"],
+            "items": { "$ref": "#/$defs/participant" }
+          }
+        }
+      },
+  
+      "presentLevels": {
+        "type": "object",
+        "properties": {
+          "academicAchievement": { "type": ["string", "null"] },
+          "functionalPerformance": { "type": ["string", "null"] },
+          "communication": { "type": ["string", "null"] },
+          "socialEmotionalBehavioral": { "type": ["string", "null"] },
+          "motorSkills": { "type": ["string", "null"] },
+          "health": { "type": ["string", "null"] },
+          "adaptiveDailyLiving": { "type": ["string", "null"] },
+          "vocationalTransition": { "type": ["string", "null"] },
+          "strengths": { "type": ["string", "null"] },
+          "parentConcerns": { "type": ["string", "null"] },
+          "studentConcerns": { "type": ["string", "null"] },
+          "impactOfDisability": { "type": ["string", "null"] }
+        }
+      },
+  
+      "goals": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["area", "baseline", "statement"],
+          "properties": {
+            "id": { "type": ["string", "null"] },
+            "area": { "type": "string" },      /* e.g., Reading, Behavior */
+            "topic": { "type": ["string", "null"] },
+            "baseline": { "type": "string" },
+            "statement": { "type": "string" },
+            "criteria": { "type": ["string", "null"] },
+            "measurementMethod": { "type": ["string", "null"] },
+            "targetDate": { "type": ["string", "null"], "format": "date" },
+            "targetPercentage": { "type": ["number", "null"] },
+            "progressReportFrequency": { "type": ["string", "null"] },
+            "shortTermObjectives": {
+              "type": ["array", "null"],
+              "items": {
+                "type": "object",
+                "required": ["statement", "criteria", "measurementMethod"],
+                "properties": {
+                  "statement": { "type": "string" },
+                  "criteria": { "type": "string" },
+                  "measurementMethod": { "type": "string" },
+                  "targetDate": { "type": ["string", "null"], "format": "date" }
+                }
+              }
+            }
+          }
+        }
+      },
+  
+      "accommodations": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["title", "description"],
+          "properties": {
+            "title": { "type": "string" },
+            "description": { "type": "string" },
+            "category": { "type": ["string", "null"] }, /* presentation, response, setting, timing/scheduling */
+            "frequency": { "type": ["string", "null"] },
+            "location": { "type": ["string", "null"] },
+            "startDate": { "type": ["string", "null"], "format": "date" },
+            "endDate": { "type": ["string", "null"], "format": "date" }
+          }
+        }
+      },
+  
+      "services": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["serviceType", "frequency", "durationMinutes"],
+          "properties": {
+            "id": { "type": ["string", "null"] },
+            "serviceType": { "type": "string" },              /* Speech, OT, Counseling */
+            "providerRole": { "type": ["string", "null"] },   /* SLP, OT, SpecEd Teacher */
+            "sessionLocation": { "type": ["string", "null"] },/* Gen Ed, Pull-out, Community */
+            "sessionType": { "type": ["string", "null"] },    /* individual, group */
+            "groupSize": { "type": ["integer", "null"], "minimum": 1 },
+            "frequency": { "$ref": "#/$defs/frequency" },
+            "durationMinutes": { "type": "number", "minimum": 0 },
+            "startDate": { "type": ["string", "null"], "format": "date" },
+            "endDate": { "type": ["string", "null"], "format": "date" },
+            "comments": { "type": ["string", "null"] }
+          }
+        }
+      },
+  
+      "testingParticipation": {
+        "type": "object",
+        "properties": {
+          "stateAssessments": { "$ref": "#/$defs/assessmentArray" },
+          "districtAssessments": { "$ref": "#/$defs/assessmentArray" },
+          "alternateAssessmentUsed": { "type": ["boolean", "null"] },
+          "testAccommodations": {
+            "type": ["array", "null"],
+            "items": { "type": "string" }
+          }
+        }
+      },
+  
+      "placementLRE": {
+        "type": "object",
+        "required": ["percentGenEd"],
+        "properties": {
+          "percentGenEd": { "type": "number", "minimum": 0, "maximum": 100 },
+          "percentSpecialEd": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
+          "description": { "type": ["string", "null"] },
+          "transportationRequired": { "type": ["boolean", "null"] }
+        }
+      },
+  
+      "ESY": {
+        "type": ["object", "null"],
+        "properties": {
+          "eligible": { "type": "boolean" },
+          "justification": { "type": ["string", "null"] },
+          "services": { "$ref": "#/properties/services" },
+          "reconveneDate": { "type": ["string", "null"], "format": "date" }
+        }
+      },
+  
+      "transitionPlan": {
+        "type": ["object", "null"],
+        "properties": {
+          "required": { "type": ["boolean", "null"] },
+          "ageAtStart": { "type": ["integer", "null"] },
+          "postSecondaryGoals": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "required": ["area", "statement"],
+              "properties": {
+                "area": { "type": "string" }, /* education/training, employment, independent living */
+                "statement": { "type": "string" }
+              }
+            }
+          },
+          "transitionServices": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "required": ["activity", "responsibleParty"],
+              "properties": {
+                "activity": { "type": "string" },
+                "responsibleParty": { "type": "string" },
+                "startDate": { "type": ["string", "null"], "format": "date" },
+                "endDate": { "type": ["string", "null"], "format": "date" }
+              }
+            }
+          }
+        }
+      },
+  
+      "progressReporting": {
+        "type": "object",
+        "properties": {
+          "frequencyToParents": { "type": ["string", "null"] },
+          "method": { "type": ["string", "null"] }, /* report card, portal, meeting */
+          "reports": {
+            "type": ["array", "null"],
+            "items": {
+              "type": "object",
+              "required": ["date", "goalId", "status"],
+              "properties": {
+                "date": { "type": "string", "format": "date" },
+                "goalId": { "type": "string" },
+                "status": { "type": "string" }, /* on track, met, not met */
+                "evidence": { "type": ["string", "null"] }
+              }
+            }
+          }
+        }
+      },
+  
+      "amendments": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "required": ["date", "summary"],
+          "properties": {
+            "date": { "type": "string", "format": "date" },
+            "summary": { "type": "string" },
+            "reason": { "type": ["string", "null"] }
+          }
+        }
+      },
+  
+      "signatures": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "required": ["name", "role"],
+          "properties": {
+            "name": { "type": "string" },
+            "role": { "type": "string" }, /* parent, case manager, LEA rep */
+            "signedAt": { "type": ["string", "null"], "format": "date" },
+            "agreement": { "type": ["string", "null"] } /* agree/disagree/partial */
+          }
+        }
+      },
+  
+      "attachments": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "required": ["label", "path"],
+          "properties": {
+            "label": { "type": "string" },
+            "path": { "type": "string" },
+            "sectionRef": { "type": ["string", "null"] }
+          }
+        }
+      },
+  
+      "notes": {
+        "type": ["string", "null"]
+      }
+    },
+  
+    "$defs": {
+      "participant": {
+        "type": "object",
+        "required": ["name", "role"],
+        "properties": {
+          "name": { "type": "string" },
+          "role": { "type": "string" },
+          "email": { "type": ["string", "null"] },
+          "phone": { "type": ["string", "null"] },
+          "attended": { "type": ["boolean", "null"] },
+          "signed": { "type": ["boolean", "null"] }
+        }
+      },
+      "frequency": {
+        "type": "object",
+        "required": ["amount", "unit", "per"],
+        "properties": {
+          "amount": { "type": "number", "minimum": 0 },
+          "unit": { "type": "string" },         /* minutes, hours, sessions */
+          "per": { "type": "string" }            /* week, month, cycle */
+        }
+      },
+      "assessmentArray": {
+        "type": ["array", "null"],
+        "items": {
+          "type": "object",
+          "required": ["assessmentName"],
+          "properties": {
+            "assessmentName": { "type": "string" },
+            "date": { "type": ["string", "null"], "format": "date" },
+            "participation": { "type": ["string", "null"] }, /* with accommodations / alternate */
+            "scores": { "type": ["string", "null"] },
+            "accommodations": {
+              "type": ["array", "null"],
+              "items": { "type": "string" }
+            },
+            "comments": { "type": ["string", "null"] }
+          }
+        }
+      }
+    }
+  }

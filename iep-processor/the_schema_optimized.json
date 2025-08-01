@@ -1,0 +1,263 @@
+{
+  "type": "object",
+  "properties": {
+    "IEP": {
+      "type": "object",
+      "properties": {
+        "CHILD'S INFORMATION": {
+          "type": "object",
+          "properties": {
+            "NAME": {"type": "string"},
+            "ID NUMBER": {"type": "string"},
+            "DATE OF BIRTH": {"type": "string"},
+            "STREET": {"type": "string"},
+            "CITY": {"type": "string"},
+            "STATE": {"type": "string"},
+            "ZIP": {"type": "string"},
+            "GENDER": {"type": "string"},
+            "GRADE": {"type": "string"},
+            "DISTRICT OF RESIDENCE": {"type": "string"},
+            "COUNTY OF RESIDENCE": {"type": "string"},
+            "DISTRICT OF SERVICE": {"type": "string"},
+            "Is the child in preschool?": {"type": "boolean"},
+            "Will the child be 14 years old before the end of this IEP?": {"type": "boolean"},
+            "Is the child younger than 14 years of age but has transition and postsecondary goal information?": {"type": "boolean"},
+            "Is the child a ward of the state?": {"type": "boolean"},
+            "If yes, name of surrogate parent": {"type": "string"},
+            "IEP by third birthday? (If transitioning from Part C)": {"type": "boolean"}
+          },
+          "required": ["NAME", "ID NUMBER", "DATE OF BIRTH", "STREET", "CITY", "STATE", "ZIP", "GENDER", "GRADE", "DISTRICT OF RESIDENCE", "COUNTY OF RESIDENCE", "DISTRICT OF SERVICE", "Is the child in preschool?", "Will the child be 14 years old before the end of this IEP?", "Is the child younger than 14 years of age but has transition and postsecondary goal information?", "Is the child a ward of the state?", "If yes, name of surrogate parent", "IEP by third birthday? (If transitioning from Part C)"],
+          "additionalProperties": false
+        },
+        "PARENT/GUARDIAN INFORMATION": {
+          "type": "object",
+          "properties": {
+            "Parent/Guardian 1": {
+              "type": "object",
+              "properties": {
+                "NAME": {"type": "string"},
+                "STREET": {"type": "string"},
+                "CITY": {"type": "string"},
+                "STATE": {"type": "string"},
+                "ZIP": {"type": "string"},
+                "HOME PHONE": {"type": "string"},
+                "WORK PHONE": {"type": "string"},
+                "CELL PHONE": {"type": "string"},
+                "EMAIL": {"type": "string"}
+              },
+              "required": ["NAME", "STREET", "CITY", "STATE", "ZIP", "HOME PHONE", "WORK PHONE", "CELL PHONE", "EMAIL"],
+              "additionalProperties": false
+            },
+            "Parent/Guardian 2": {
+              "type": "object",
+              "properties": {
+                "NAME": {"type": "string"},
+                "STREET": {"type": "string"},
+                "CITY": {"type": "string"},
+                "STATE": {"type": "string"},
+                "ZIP": {"type": "string"},
+                "HOME PHONE": {"type": "string"},
+                "WORK PHONE": {"type": "string"},
+                "CELL PHONE": {"type": "string"},
+                "EMAIL": {"type": "string"}
+              },
+              "required": ["NAME", "STREET", "CITY", "STATE", "ZIP", "HOME PHONE", "WORK PHONE", "CELL PHONE", "EMAIL"],
+              "additionalProperties": false
+            },
+            "OTHER INFORMATION": {"type": "string"}
+          },
+          "required": ["Parent/Guardian 1", "Parent/Guardian 2", "OTHER INFORMATION"],
+          "additionalProperties": false
+        },
+        "MEETING INFORMATION": {
+          "type": "object",
+          "properties": {
+            "MEETING DATE": {"type": "string"},
+            "MEETING TYPE": {"type": "string"}
+          },
+          "required": ["MEETING DATE", "MEETING TYPE"],
+          "additionalProperties": false
+        },
+        "IEP TIMELINES": {
+          "type": "object",
+          "properties": {
+            "ETR COMPLETION DATE": {"type": "string"},
+            "NEXT ETR DUE DATE": {"type": "string"}
+          },
+          "required": ["ETR COMPLETION DATE", "NEXT ETR DUE DATE"],
+          "additionalProperties": false
+        },
+        "IEP EFFECTIVE DATES": {
+          "type": "object",
+          "properties": {
+            "START": {"type": "string"},
+            "END": {"type": "string"},
+            "DATE OF NEXT IEP REVIEW": {"type": "string"}
+          },
+          "required": ["START", "END", "DATE OF NEXT IEP REVIEW"],
+          "additionalProperties": false
+        },
+        "1. FUTURE PLANNING": {"type": "string"},
+        "2. SPECIAL INSTRUCTIONAL FACTORS": {"type": "string"},
+        "3. PROFILE": {"type": "string"},
+        "4. EXTENDED SCHOOL YEAR SERVICES": {"type": "string"},
+        "5. POSTSECONDARY TRANSITION": {"type": "string"},
+        "6. MEASURABLE ANNUAL GOALS": {
+          "type": "object",
+          "properties": {
+            "FREQUENCY OF WRITTEN PROGRESS REPORTING TOWARD GOAL MASTERY TO PARENTS": {"type": "string"},
+            "GOALS": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "NUMBER": {"type": "number"},
+                  "AREA": {"type": "string"},
+                  "PRESENT LEVEL OF ACADEMIC ACHIEVEMENT AND FUNCTIONAL PERFORMANCE": {"type": "string"},
+                  "MEASURABLE ANNUAL GOAL": {"type": "string"},
+                  "METHOD(S) FOR MEASURING THE CHILD'S PROGRESS TOWARDS ANNUAL GOAL": {"type": "string"},
+                  "Objectives/Benchmarks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "Objective/Benchmark": {"type": "string"},
+                        "Date of Mastery": {"type": "string"}
+                      },
+                      "required": ["Objective/Benchmark", "Date of Mastery"],
+                      "additionalProperties": false
+                    }
+                  }
+                },
+                "required": ["NUMBER", "AREA", "PRESENT LEVEL OF ACADEMIC ACHIEVEMENT AND FUNCTIONAL PERFORMANCE", "MEASURABLE ANNUAL GOAL", "METHOD(S) FOR MEASURING THE CHILD'S PROGRESS TOWARDS ANNUAL GOAL", "Objectives/Benchmarks"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["FREQUENCY OF WRITTEN PROGRESS REPORTING TOWARD GOAL MASTERY TO PARENTS", "GOALS"],
+          "additionalProperties": false
+        },
+        "7. SPECIALLY DESIGNED SERVICES": {
+          "type": "object",
+          "properties": {
+            "SPECIALLY DESIGNED INSTRUCTION": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Description": {"type": "string"},
+                  "Goal Addressed #": {"type": "number"},
+                  "Provider Title": {"type": "string"},
+                  "Location of Service": {"type": "string"},
+                  "Begin Date": {"type": "string"},
+                  "End Date": {"type": "string"},
+                  "Amount of Time": {"type": "string"},
+                  "Frequency": {"type": "string"}
+                },
+                "required": ["Description", "Goal Addressed #", "Provider Title", "Location of Service", "Begin Date", "End Date", "Amount of Time", "Frequency"],
+                "additionalProperties": false
+              }
+            },
+            "RELATED SERVICES": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Description": {"type": "string"},
+                  "Goal Addressed #": {"type": "number"},
+                  "Provider Title": {"type": "string"},
+                  "Location of Service": {"type": "string"},
+                  "Begin Date": {"type": "string"},
+                  "End Date": {"type": "string"},
+                  "Amount of Time": {"type": "string"},
+                  "Frequency": {"type": "string"}
+                },
+                "required": ["Description", "Goal Addressed #", "Provider Title", "Location of Service", "Begin Date", "End Date", "Amount of Time", "Frequency"],
+                "additionalProperties": false
+              }
+            },
+            "ASSISTIVE TECHNOLOGY": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Description": {"type": "string"},
+                  "Goal Addressed #": {"type": "number"},
+                  "Provider Title": {"type": "string"},
+                  "Location of Service": {"type": "string"},
+                  "Begin Date": {"type": "string"},
+                  "End Date": {"type": "string"},
+                  "Amount of Time": {"type": "string"},
+                  "Frequency": {"type": "string"}
+                },
+                "required": ["Description", "Goal Addressed #", "Provider Title", "Location of Service", "Begin Date", "End Date", "Amount of Time", "Frequency"],
+                "additionalProperties": false
+              }
+            },
+            "ACCOMMODATIONS": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Description": {"type": "string"},
+                  "Begin Date": {"type": "string"},
+                  "End Date": {"type": "string"}
+                },
+                "required": ["Description", "Begin Date", "End Date"],
+                "additionalProperties": false
+              }
+            },
+            "MODIFICATIONS": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Description": {"type": "string"},
+                  "Begin Date": {"type": "string"},
+                  "End Date": {"type": "string"}
+                },
+                "required": ["Description", "Begin Date", "End Date"],
+                "additionalProperties": false
+              }
+            },
+            "SUPPORT FOR SCHOOL PERSONNEL": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "Description": {"type": "string"},
+                  "Begin Date": {"type": "string"},
+                  "End Date": {"type": "string"}
+                },
+                "required": ["Description", "Begin Date", "End Date"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": ["SPECIALLY DESIGNED INSTRUCTION", "RELATED SERVICES", "ASSISTIVE TECHNOLOGY", "ACCOMMODATIONS", "MODIFICATIONS", "SUPPORT FOR SCHOOL PERSONNEL"],
+          "additionalProperties": false
+        },
+        "8. TRANSPORTATION AS A RELATED SERVICE": {"type": "string"},
+        "9. NONACADEMIC AND EXTRACURRICULAR ACTIVITIES": {
+          "type": "object",
+          "properties": {
+            "Participation with nondisabled peers": {"type": "string"},
+            "If the child will not participate, explain": {"type": "string"}
+          },
+          "required": ["Participation with nondisabled peers", "If the child will not participate, explain"],
+          "additionalProperties": false
+        },
+        "10. LEAST RESTRICTIVE ENVIRONMENT": {"type": "string"},
+        "11. GENERAL FACTORS": {"type": "string"},
+        "12. STATEWIDE AND DISTRICT WIDE TESTING": {"type": "string"},
+        "13. MEETING PARTICIPANTS": {"type": "string"},
+        "14. IEP TEAM MEETING INFORMATION": {"type": "string"},
+        "15. SIGNATURES": {"type": "string"}
+      },
+      "required": ["CHILD'S INFORMATION", "PARENT/GUARDIAN INFORMATION", "MEETING INFORMATION", "IEP TIMELINES", "IEP EFFECTIVE DATES", "1. FUTURE PLANNING", "2. SPECIAL INSTRUCTIONAL FACTORS", "3. PROFILE", "4. EXTENDED SCHOOL YEAR SERVICES", "5. POSTSECONDARY TRANSITION", "6. MEASURABLE ANNUAL GOALS", "7. SPECIALLY DESIGNED SERVICES", "8. TRANSPORTATION AS A RELATED SERVICE", "9. NONACADEMIC AND EXTRACURRICULAR ACTIVITIES", "10. LEAST RESTRICTIVE ENVIRONMENT", "11. GENERAL FACTORS", "12. STATEWIDE AND DISTRICT WIDE TESTING", "13. MEETING PARTICIPANTS", "14. IEP TEAM MEETING INFORMATION", "15. SIGNATURES"],
+      "additionalProperties": false
+    }
+  },
+  "required": ["IEP"],
+  "additionalProperties": false
+}

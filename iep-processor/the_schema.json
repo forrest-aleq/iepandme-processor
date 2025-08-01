@@ -1,369 +1,394 @@
 {
-    "$id": "https://aleq.dev/schemas/iep/v1.1.json",
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "IEP Canonical Schema (v1.1)",
-    "type": "object",
-    "required": [
-      "metadata",
-      "studentInfo",
-      "eligibility",
-      "timelines",
-      "meeting",
-      "presentLevels",
-      "goals",
-      "services",
-      "accommodations",
-      "placementLRE",
-      "testingParticipation",
-      "progressReporting"
-    ],
-    "properties": {
-      "metadata": {
-        "type": "object",
-        "required": ["schemaVersion", "source", "documentDate", "parsedAt"],
-        "properties": {
-          "schemaVersion": { "type": "string", "const": "1.1" },
-          "source": { "type": "string" },
-          "documentDate": { "type": "string", "format": "date" },
-          "parsedAt": { "type": "string", "format": "date-time" },
-          "districtId": { "type": ["string", "null"] },
-          "originalFilename": { "type": ["string", "null"] },
-          "ocrConfidence": { "type": ["number", "null"], "minimum": 0, "maximum": 1 }
+    "IEP": {
+      "CHILD'S INFORMATION": {
+        "NAME": "string",
+        "ID NUMBER": "string",
+        "DATE OF BIRTH": "string",
+        "STREET": "string",
+        "CITY": "string",
+        "STATE": "string",
+        "ZIP": "string",
+        "GENDER": "string",
+        "GRADE": "string",
+        "DISTRICT OF RESIDENCE": "string",
+        "COUNTY OF RESIDENCE": "string",
+        "DISTRICT OF SERVICE": "string",
+        "Is the child in preschool?": "boolean",
+        "Will the child be 14 years old before the end of this IEP?": "boolean",
+        "Is the child younger than 14 years of age but has transition and postsecondary goal information?": "boolean",
+        "Is the child a ward of the state?": "boolean",
+        "If yes, name of surrogate parent": "string",
+        "IEP by third birthday? (If transitioning from Part C)": "boolean"
+      },
+      "PARENT/GUARDIAN INFORMATION": {
+        "Parent/Guardian 1": {
+          "NAME": "string",
+          "STREET": "string",
+          "CITY": "string",
+          "STATE": "string",
+          "ZIP": "string",
+          "HOME PHONE": "string",
+          "WORK PHONE": "string",
+          "CELL PHONE": "string",
+          "EMAIL": "string"
+        },
+        "Parent/Guardian 2": {
+          "NAME": "string",
+          "STREET": "string",
+          "CITY": "string",
+          "STATE": "string",
+          "ZIP": "string",
+          "HOME PHONE": "string",
+          "WORK PHONE": "string",
+          "CELL PHONE": "string",
+          "EMAIL": "string"
+        },
+        "OTHER INFORMATION": "string"
+      },
+      "MEETING INFORMATION": {
+        "MEETING DATE": "string",
+        "MEETING TYPE": {
+          "INITIAL IEP": "boolean",
+          "ANNUAL REVIEW": "boolean",
+          "REVIEW OTHER THAN ANNUAL REVIEW": "boolean",
+          "AMENDMENT": "boolean",
+          "OTHER": "boolean"
         }
       },
-  
-      "studentInfo": {
-        "type": "object",
-        "required": ["name"],
-        "properties": {
-          "name": { "type": "string" },
-          "firstName": { "type": ["string", "null"] },
-          "lastName": { "type": ["string", "null"] },
-          "birthdate": { "type": ["string", "null"], "format": "date" },
-          "studentId": { "type": ["string", "null"] },
-          "grade": { "type": ["string", "null"] },
-          "school": { "type": ["string", "null"] },
-          "district": { "type": ["string", "null"] },
-          "primaryLanguage": { "type": ["string", "null"] },
-          "address": { "type": ["string", "null"] },
-          "gender": { "type": ["string", "null"] },
-          "ethnicity": { "type": ["string", "null"] },
-          "parentGuardians": {
-            "type": ["array", "null"],
-            "items": {
-              "type": "object",
-              "required": ["name", "relationship"],
-              "properties": {
-                "name": { "type": "string" },
-                "relationship": { "type": "string" },
-                "phone": { "type": ["string", "null"] },
-                "email": { "type": ["string", "null"] },
-                "address": { "type": ["string", "null"] }
-              }
+      "IEP TIMELINES": {
+        "ETR COMPLETION DATE": "string",
+        "NEXT ETR DUE DATE": "string"
+      },
+      "IEP EFFECTIVE DATES": {
+        "START": "string",
+        "END": "string",
+        "NEXT IEP REVIEW": "string"
+      },
+      "AMENDMENTS": [
+        {
+          "IEP SECTION AMENDED": "string",
+          "CHANGES TO THE IEP": "string",
+          "DATE OF AMENDMENT": "string",
+          "PARTICIPANT & ROLE INITIALS": "string"
+        }
+      ],
+      "1. FUTURE PLANNING": "string",
+      "2. SPECIAL INSTRUCTIONAL FACTORS": {
+        "Does the child have behavior which impedes his/her learning or the learning of others?": "boolean",
+        "Does the child have limited English proficiency?": "boolean",
+        "Is the child blind or visually impaired?": "boolean",
+        "Does the child have communication needs (required for deaf or hearing impaired)?": "boolean",
+        "Does the child need assistive technology devices and/or services?": "boolean",
+        "Does the child require specially designed physical education?": "boolean"
+      },
+      "3. PROFILE": {
+        "Most Recent Evaluation Information": "string",
+        "Most Recent District Testing": "string",
+        "Concerns from Parent": "string",
+        "Effects on Progress in General Education": "string"
+      },
+      "4. EXTENDED SCHOOL YEAR SERVICES": {
+        "Progress in General Education": "string",
+        "Has the team determined that ESY services are necessary?": "boolean",
+        "If yes, what goals determined the need?": "string",
+        "Will the team need to collect further data and reconvene to make a determination?": "boolean",
+        "Date to Reconvene": "string"
+      },
+      "5. POSTSECONDARY TRANSITION": {
+        "Postsecondary Training and Education": {
+          "Measurable Postsecondary Goal": "string",
+          "Age Appropriate Transition Assessment": "string",
+          "Courses of Study": "string",
+          "Numbers of Annual Goal(s) Related to Transition Needs": "string",
+          "Transition Services/Activities": [
+            {
+              "Service/Activity": "string",
+              "Projected Start Date": "string",
+              "Projected End Date": "string",
+              "Frequency": "string",
+              "Person/Agency Responsible": "string"
             }
+          ],
+          "Type of Evidence Indicating the Service Has Been Completed": {
+            "Anecdotal Record": "boolean",
+            "Checklist": "boolean",
+            "Work Sample": "boolean",
+            "Rubric": "boolean",
+            "Other (list)": "string"
           }
-        }
-      },
-  
-      "eligibility": {
-        "type": "object",
-        "required": ["primaryDisability"],
-        "properties": {
-          "primaryDisability": { "type": "string" },
-          "secondaryDisabilities": {
-            "type": ["array", "null"],
-            "items": { "type": "string" }
-          },
-          "eligibilityDate": { "type": ["string", "null"], "format": "date" },
-          "eligibilityDecision": { "type": ["string", "null"] },
-          "evaluationType": { "type": ["string", "null"] }  /* initial / triennial / interim */
-        }
-      },
-  
-      "timelines": {
-        "type": "object",
-        "properties": {
-          "iepStartDate": { "type": ["string", "null"], "format": "date" },
-          "iepEndDate": { "type": ["string", "null"], "format": "date" },
-          "annualReviewDue": { "type": ["string", "null"], "format": "date" },
-          "triennialReviewDue": { "type": ["string", "null"], "format": "date" },
-          "lastEvaluationDate": { "type": ["string", "null"], "format": "date" },
-          "nextEvaluationDue": { "type": ["string", "null"], "format": "date" }
-        }
-      },
-  
-      "meeting": {
-        "type": "object",
-        "properties": {
-          "meetingDate": { "type": ["string", "null"], "format": "date" },
-          "meetingType": { "type": ["string", "null"] }, /* annual, amendment, etc. */
-          "participants": {
-            "type": ["array", "null"],
-            "items": { "$ref": "#/$defs/participant" }
-          }
-        }
-      },
-  
-      "presentLevels": {
-        "type": "object",
-        "properties": {
-          "academicAchievement": { "type": ["string", "null"] },
-          "functionalPerformance": { "type": ["string", "null"] },
-          "communication": { "type": ["string", "null"] },
-          "socialEmotionalBehavioral": { "type": ["string", "null"] },
-          "motorSkills": { "type": ["string", "null"] },
-          "health": { "type": ["string", "null"] },
-          "adaptiveDailyLiving": { "type": ["string", "null"] },
-          "vocationalTransition": { "type": ["string", "null"] },
-          "strengths": { "type": ["string", "null"] },
-          "parentConcerns": { "type": ["string", "null"] },
-          "studentConcerns": { "type": ["string", "null"] },
-          "impactOfDisability": { "type": ["string", "null"] }
-        }
-      },
-  
-      "goals": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["area", "baseline", "statement"],
-          "properties": {
-            "id": { "type": ["string", "null"] },
-            "area": { "type": "string" },      /* e.g., Reading, Behavior */
-            "topic": { "type": ["string", "null"] },
-            "baseline": { "type": "string" },
-            "statement": { "type": "string" },
-            "criteria": { "type": ["string", "null"] },
-            "measurementMethod": { "type": ["string", "null"] },
-            "targetDate": { "type": ["string", "null"], "format": "date" },
-            "targetPercentage": { "type": ["number", "null"] },
-            "progressReportFrequency": { "type": ["string", "null"] },
-            "shortTermObjectives": {
-              "type": ["array", "null"],
-              "items": {
-                "type": "object",
-                "required": ["statement", "criteria", "measurementMethod"],
-                "properties": {
-                  "statement": { "type": "string" },
-                  "criteria": { "type": "string" },
-                  "measurementMethod": { "type": "string" },
-                  "targetDate": { "type": ["string", "null"], "format": "date" }
-                }
-              }
+        },
+        "Competitive Integrated Employment": {
+          "Measurable Postsecondary Goal": "string",
+          "Age Appropriate Transition Assessment": "string",
+          "Courses of Study": "string",
+          "Numbers of Annual Goal(s) Related to Transition Needs": "string",
+          "Transition Services/Activities": [
+            {
+              "Service/Activity": "string",
+              "Projected Start Date": "string",
+              "Projected End Date": "string",
+              "Frequency": "string",
+              "Person/Agency Responsible": "string"
             }
+          ],
+          "Type of Evidence Indicating the Service Has Been Completed": {
+            "Anecdotal Record": "boolean",
+            "Checklist": "boolean",
+            "Work Sample": "boolean",
+            "Rubric": "boolean",
+            "Other (list)": "string"
           }
-        }
-      },
-  
-      "accommodations": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["title", "description"],
-          "properties": {
-            "title": { "type": "string" },
-            "description": { "type": "string" },
-            "category": { "type": ["string", "null"] }, /* presentation, response, setting, timing/scheduling */
-            "frequency": { "type": ["string", "null"] },
-            "location": { "type": ["string", "null"] },
-            "startDate": { "type": ["string", "null"], "format": "date" },
-            "endDate": { "type": ["string", "null"], "format": "date" }
-          }
-        }
-      },
-  
-      "services": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["serviceType", "frequency", "durationMinutes"],
-          "properties": {
-            "id": { "type": ["string", "null"] },
-            "serviceType": { "type": "string" },              /* Speech, OT, Counseling */
-            "providerRole": { "type": ["string", "null"] },   /* SLP, OT, SpecEd Teacher */
-            "sessionLocation": { "type": ["string", "null"] },/* Gen Ed, Pull-out, Community */
-            "sessionType": { "type": ["string", "null"] },    /* individual, group */
-            "groupSize": { "type": ["integer", "null"], "minimum": 1 },
-            "frequency": { "$ref": "#/$defs/frequency" },
-            "durationMinutes": { "type": "number", "minimum": 0 },
-            "startDate": { "type": ["string", "null"], "format": "date" },
-            "endDate": { "type": ["string", "null"], "format": "date" },
-            "comments": { "type": ["string", "null"] }
-          }
-        }
-      },
-  
-      "testingParticipation": {
-        "type": "object",
-        "properties": {
-          "stateAssessments": { "$ref": "#/$defs/assessmentArray" },
-          "districtAssessments": { "$ref": "#/$defs/assessmentArray" },
-          "alternateAssessmentUsed": { "type": ["boolean", "null"] },
-          "testAccommodations": {
-            "type": ["array", "null"],
-            "items": { "type": "string" }
-          }
-        }
-      },
-  
-      "placementLRE": {
-        "type": "object",
-        "required": ["percentGenEd"],
-        "properties": {
-          "percentGenEd": { "type": "number", "minimum": 0, "maximum": 100 },
-          "percentSpecialEd": { "type": ["number", "null"], "minimum": 0, "maximum": 100 },
-          "description": { "type": ["string", "null"] },
-          "transportationRequired": { "type": ["boolean", "null"] }
-        }
-      },
-  
-      "ESY": {
-        "type": ["object", "null"],
-        "properties": {
-          "eligible": { "type": "boolean" },
-          "justification": { "type": ["string", "null"] },
-          "services": { "$ref": "#/properties/services" },
-          "reconveneDate": { "type": ["string", "null"], "format": "date" }
-        }
-      },
-  
-      "transitionPlan": {
-        "type": ["object", "null"],
-        "properties": {
-          "required": { "type": ["boolean", "null"] },
-          "ageAtStart": { "type": ["integer", "null"] },
-          "postSecondaryGoals": {
-            "type": ["array", "null"],
-            "items": {
-              "type": "object",
-              "required": ["area", "statement"],
-              "properties": {
-                "area": { "type": "string" }, /* education/training, employment, independent living */
-                "statement": { "type": "string" }
-              }
+        },
+        "Independent Living (as appropriate)": {
+          "Measurable Postsecondary Goal": "string",
+          "Age Appropriate Transition Assessment": "string",
+          "Courses of Study": "string",
+          "Numbers of Annual Goal(s) Related to Transition Needs": "string",
+          "Transition Services/Activities": [
+            {
+              "Service/Activity": "string",
+              "Projected Start Date": "string",
+              "Projected End Date": "string",
+              "Frequency": "string",
+              "Person/Agency Responsible": "string"
             }
-          },
-          "transitionServices": {
-            "type": ["array", "null"],
-            "items": {
-              "type": "object",
-              "required": ["activity", "responsibleParty"],
-              "properties": {
-                "activity": { "type": "string" },
-                "responsibleParty": { "type": "string" },
-                "startDate": { "type": ["string", "null"], "format": "date" },
-                "endDate": { "type": ["string", "null"], "format": "date" }
-              }
-            }
+          ],
+          "Type of Evidence Indicating the Service Has Been Completed": {
+            "Anecdotal Record": "boolean",
+            "Checklist": "boolean",
+            "Work Sample": "boolean",
+            "Rubric": "boolean",
+            "Other (list)": "string"
           }
         }
       },
-  
-      "progressReporting": {
-        "type": "object",
-        "properties": {
-          "frequencyToParents": { "type": ["string", "null"] },
-          "method": { "type": ["string", "null"] }, /* report card, portal, meeting */
-          "reports": {
-            "type": ["array", "null"],
-            "items": {
-              "type": "object",
-              "required": ["date", "goalId", "status"],
-              "properties": {
-                "date": { "type": "string", "format": "date" },
-                "goalId": { "type": "string" },
-                "status": { "type": "string" }, /* on track, met, not met */
-                "evidence": { "type": ["string", "null"] }
-              }
-            }
-          }
-        }
-      },
-  
-      "amendments": {
-        "type": ["array", "null"],
-        "items": {
-          "type": "object",
-          "required": ["date", "summary"],
-          "properties": {
-            "date": { "type": "string", "format": "date" },
-            "summary": { "type": "string" },
-            "reason": { "type": ["string", "null"] }
-          }
-        }
-      },
-  
-      "signatures": {
-        "type": ["array", "null"],
-        "items": {
-          "type": "object",
-          "required": ["name", "role"],
-          "properties": {
-            "name": { "type": "string" },
-            "role": { "type": "string" }, /* parent, case manager, LEA rep */
-            "signedAt": { "type": ["string", "null"], "format": "date" },
-            "agreement": { "type": ["string", "null"] } /* agree/disagree/partial */
-          }
-        }
-      },
-  
-      "attachments": {
-        "type": ["array", "null"],
-        "items": {
-          "type": "object",
-          "required": ["label", "path"],
-          "properties": {
-            "label": { "type": "string" },
-            "path": { "type": "string" },
-            "sectionRef": { "type": ["string", "null"] }
-          }
-        }
-      },
-  
-      "notes": {
-        "type": ["string", "null"]
-      }
-    },
-  
-    "$defs": {
-      "participant": {
-        "type": "object",
-        "required": ["name", "role"],
-        "properties": {
-          "name": { "type": "string" },
-          "role": { "type": "string" },
-          "email": { "type": ["string", "null"] },
-          "phone": { "type": ["string", "null"] },
-          "attended": { "type": ["boolean", "null"] },
-          "signed": { "type": ["boolean", "null"] }
-        }
-      },
-      "frequency": {
-        "type": "object",
-        "required": ["amount", "unit", "per"],
-        "properties": {
-          "amount": { "type": "number", "minimum": 0 },
-          "unit": { "type": "string" },         /* minutes, hours, sessions */
-          "per": { "type": "string" }            /* week, month, cycle */
-        }
-      },
-      "assessmentArray": {
-        "type": ["array", "null"],
-        "items": {
-          "type": "object",
-          "required": ["assessmentName"],
-          "properties": {
-            "assessmentName": { "type": "string" },
-            "date": { "type": ["string", "null"], "format": "date" },
-            "participation": { "type": ["string", "null"] }, /* with accommodations / alternate */
-            "scores": { "type": ["string", "null"] },
-            "accommodations": {
-              "type": ["array", "null"],
-              "items": { "type": "string" }
+      "6. MEASURABLE ANNUAL GOALS": {
+        "FREQUENCY OF WRITTEN PROGRESS REPORTING TOWARD GOAL MASTERY TO PARENTS": "string",
+        "GOALS": [
+          {
+            "NUMBER": "integer",
+            "AREA": "string",
+            "PRESENT LEVEL OF ACADEMIC ACHIEVEMENT AND FUNCTIONAL PERFORMANCE": "string",
+            "MEASURABLE ANNUAL GOAL": "string",
+            "METHOD(S) FOR MEASURING THE CHILD'S PROGRESS TOWARDS ANNUAL GOAL": {
+              "Curriculum-Based Assessment": "boolean",
+              "Portfolios": "boolean",
+              "Observation": "boolean",
+              "Anecdotal Records": "boolean",
+              "Short-Cycle Assessments": "boolean",
+              "Performance Assessments": "boolean",
+              "Checklists": "boolean",
+              "Running Records": "boolean",
+              "Work Samples": "boolean",
+              "Inventories": "boolean",
+              "Rubrics": "boolean"
             },
-            "comments": { "type": ["string", "null"] }
+            "Objectives/Benchmarks": [
+              {
+                "Objective/Benchmark": "string",
+                "Date of Mastery": "string"
+              }
+            ]
           }
+        ]
+      },
+      "7. SPECIALLY DESIGNED SERVICES": {
+        "SPECIALLY DESIGNED INSTRUCTION": [
+          {
+            "Description": "string",
+            "Goal Addressed #": "integer",
+            "Provider Title": "string",
+            "Location of Service": "string",
+            "Begin Date": "string",
+            "End Date": "string",
+            "Amount of Time": "string",
+            "Frequency": "string"
+          }
+        ],
+        "RELATED SERVICES": [
+          {
+            "Description": "string",
+            "Goal Addressed #": "integer",
+            "Provider Title": "string",
+            "Location of Service": "string",
+            "Begin Date": "string",
+            "End Date": "string",
+            "Amount of Time": "string",
+            "Frequency": "string"
+          }
+        ],
+        "ASSISTIVE TECHNOLOGY": [
+          {
+            "Description": "string",
+            "Goal Addressed #": "integer",
+            "Provider Title": "string",
+            "Location of Service": "string",
+            "Begin Date": "string",
+            "End Date": "string",
+            "Amount of Time": "string",
+            "Frequency": "string"
+          }
+        ],
+        "ACCOMMODATIONS": [
+          {
+            "Description": "string",
+            "Begin Date": "string",
+            "End Date": "string"
+          }
+        ],
+        "MODIFICATIONS": [
+          {
+            "Description": "string",
+            "Begin Date": "string",
+            "End Date": "string"
+          }
+        ],
+        "SUPPORT FOR SCHOOL PERSONNEL": [
+          {
+            "Description": "string",
+            "Begin Date": "string",
+            "End Date": "string"
+          }
+        ],
+        "SERVICE(S) TO SUPPORT MEDICAL NEEDS": [
+          {
+            "Description": "string",
+            "Begin Date": "string",
+            "End Date": "string"
+          }
+        ]
+      },
+      "8. TRANSPORTATION AS A RELATED SERVICE": {
+        "Does the child require special transportation?": "boolean",
+        "Does the child need transportation to and from services?": "boolean",
+        "Does the child need accommodations or modifications for transportation?": "boolean",
+        "If yes, transportation accommodations/modifications needed": {
+          "Bus driver will be notified of behavioral/medical concerns": "boolean",
+          "Aide (for transportation only)": "boolean",
+          "Specially Adapted Vehicle": "boolean",
+          "Wheelchair lift": "boolean",
+          "Safety Vest": "boolean",
+          "Car Seat": "boolean",
+          "Securement Systems": "boolean",
+          "Other (specify)": "string"
         }
+      },
+      "9. NONACADEMIC AND EXTRACURRICULAR ACTIVITIES": {
+        "Participation with nondisabled peers (describe)": "string",
+        "If the child will not participate, explain": "string"
+      },
+      "10. GENERAL FACTORS": {
+        "The strengths of the child considered?": "boolean",
+        "The concerns of the parents for the education of the child considered?": "boolean",
+        "The results of the initial or most recent evaluations of the child considered?": "boolean",
+        "As appropriate, the results of performance on any state or district-wide assessments considered?": "boolean",
+        "The academic, developmental and functional needs of the child considered?": "boolean",
+        "Regarding the Third Grade Reading Guarantee, is the child on-track for reading?": "string"
+      },
+      "11. LEAST RESTRICTIVE ENVIRONMENT": {
+        "For School Age: attends school child would attend if not disabled?": "boolean",
+        "If no, justify": "string",
+        "Receives all special education services with nondisabled peers?": "boolean",
+        "If no, justify (cannot be only due to needed curriculum modifications)": "string"
+      },
+      "12. STATEWIDE AND DISTRICT WIDE TESTING": {
+        "District Testing": [
+          {
+            "AREA": "string",
+            "ASSESSMENT TITLE": "string",
+            "DETAIL OF ACCOMMODATIONS": "string"
+          }
+        ],
+        "Statewide Testing": [
+          {
+            "AREA": "string",
+            "ASSESSMENT TITLE": "string",
+            "DETAIL OF ACCOMMODATIONS": "string"
+          }
+        ]
+      },
+      "13. EXEMPTIONS": {
+        "Is the child participating in the Alternate Assessment (AASCD)?": "boolean",
+        "If yes, justify choice of alternate assessment": "string",
+        "Will the child participate in district-wide and state-wide assessments with accommodations?": "boolean",
+        "If yes, accommodations for each subject": [
+          {
+            "Subject": "string",
+            "Accommodation": "string"
+          }
+        ],
+        "Does the child have a significant cognitive disability?": "boolean",
+        "If no (not significant cognitive disability), retention provision of Third Grade Reading Guarantee": {
+          "Not exempt from retention": "boolean",
+          "Exempt from retention": "boolean"
+        },
+        "Is the child excused from consequences of not passing required graduation tests?": "boolean",
+        "Subjects of excused graduation tests (if any)": [
+          {
+            "Course Title": "string",
+            "Justification": "string"
+          }
+        ]
+      },
+      "14. MEETING PARTICIPANTS": {
+        "IEP Meeting Participants (attended and participated)": [
+          {
+            "Name": "string",
+            "Position": "string",
+            "Signature": "string",
+            "Date": "string"
+          }
+        ],
+        "People not in attendance who provided information": [
+          {
+            "Name": "string",
+            "Position": "string",
+            "Signature": "string",
+            "Date": "string"
+          }
+        ],
+        "This IEP meeting was": {
+          "Face-to-Face Meeting": "boolean",
+          "Video Conference": "boolean",
+          "Telephone Conference/Conference Call": "boolean",
+          "Other": "boolean"
+        },
+        "IEP EFFECTIVE DATES": {
+          "START": "string",
+          "END": "string",
+          "DATE OF NEXT IEP REVIEW": "string"
+        }
+      },
+      "15. SIGNATURES": {
+        "INITIAL IEP": {
+          "I give consent to initiate special education and related services in this IEP": "boolean",
+          "I give consent to initiate services except for": "string",
+          "I do not give consent for services at this time": "boolean",
+          "Parent/Guardian Signature (Initial IEP)": "string",
+          "Date": "string"
+        },
+        "IEP ANNUAL REVIEW (Not a Change of Placement)": {
+          "Parent agrees with implementation of this IEP": "boolean",
+          "Parent attendance noted but does NOT agree with the following IEP services": "string",
+          "Parent/Guardian Signature (Annual Review)": "string",
+          "Date": "string"
+        },
+        "IEP REVIEW (Change of Placement)": {
+          "I give consent for the Change of Placement as identified in this IEP": "boolean",
+          "I do NOT give consent for the Change of Placement as identified in this IEP": "boolean",
+          "I revoke consent for all special education and related services": "boolean",
+          "Parent/Guardian Signature (Change of Placement)": "string",
+          "Date": "string"
+        },
+        "Procedural Safeguards Notice received at IEP meeting": "boolean",
+        "If no, date provided": "string",
+        "Transfer of Rights discussed by 17th birthday (Yes/No)": "boolean",
+        "Student Signature (age of majority notice)": "string",
+        "Date (Student)": "string",
+        "Parent/Guardian Signature (acknowledging transfer of rights)": "string",
+        "Date (Parent transfer notice)": "string",
+        "Parent received a copy of the IEP at the meeting": "boolean",
+        "If no, date copy sent": "string"
       }
     }
   }
