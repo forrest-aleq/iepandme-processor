@@ -22,11 +22,23 @@ interface FormSpecificIEPData {
 /**
  * Calculate cost for o4-mini-2025-04-16 model
  */
-function calculateGPT4oMiniCost(inputTokens: number, outputTokens: number): number {
-  const inputCostPerToken = 1.10 / 1000000;  // $1.10 per million input tokens
-  const outputCostPerToken = 4.40 / 1000000; // $4.40 per million output tokens
-  
-  return (inputTokens * inputCostPerToken) + (outputTokens * outputCostPerToken);
+function calculate_cost(model: string, inputTokens: number, outputTokens: number, cachedInputTokens: number = 0): number {
+  // Pricing known for o4-mini-2025-04-16; default to 0 for unknown models
+  if (model === 'o4-mini-2025-04-16') {
+    const inputCostPerToken = 1.10 / 1000000;  // $1.10 per million input tokens
+    const outputCostPerToken = 4.40 / 1000000; // $4.40 per million output tokens
+    return (inputTokens * inputCostPerToken) + (outputTokens * outputCostPerToken);
+  }
+  if (model === 'gpt-5-2025-08-07') {
+    // GPT-5 pricing provided by user
+    const inputCostPerToken = 1.25 / 1_000_000;     // $1.25 per million
+    const cachedInputCostPerToken = 0.125 / 1_000_000; // $0.125 per million
+    const outputCostPerToken = 10.00 / 1_000_000;   // $10.00 per million
+    const nonCachedInput = Math.max(0, inputTokens - (cachedInputTokens || 0));
+    return (nonCachedInput * inputCostPerToken) + (cachedInputTokens * cachedInputCostPerToken) + (outputTokens * outputCostPerToken);
+  }
+  // TODO: add pricing for other models when available
+  return 0;
 }
 
 /**
@@ -40,6 +52,9 @@ export async function extractWithFormSpecificCompliance(
   const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
   });
+
+  // Prefer GPT-5 by default; allow override via env
+  const MODEL = process.env.OPENAI_MODEL || 'gpt-5-2025-08-07';
 
   console.log(`📄 Processing: ${filePath.split('/').pop()}`);
 
@@ -85,6 +100,12 @@ CRITICAL: You MUST extract ALL sections from the schema, including:
 3. For boolean fields, set true/false based on checkboxes or selections
 4. Extract complete text content, don't summarize
 5. Include all subsections and nested objects as defined in schema
+
+**GOALS COMPLETENESS AND CONSISTENCY (CRITICAL):**
+- Enumerate every goal block present in the PDF (e.g., "#1", "#2", etc.).
+- Extract ALL goals across page breaks and behavior goals; do not stop at the first.
+- After extracting services, cross-validate: if any service references "Goal Addressed #" = N, ensure GOALS contains a goal with NUMBER = N.
+- If numbering is non-sequential or repeated, preserve the literal NUMBERs as shown and include all.
 
 **🎯 SECTION BOUNDARY DETECTION:**
 - Look for numbered section headers (1., 2., 3., etc.)
@@ -182,7 +203,7 @@ Extract EVERYTHING you see. This is a real IEP document with real data - extract
     
     // Call OpenAI Responses API with proper file reference and complete master schema
     const response = await client.responses.create({
-      model: "o4-mini-2025-04-16",
+      model: MODEL,
       reasoning: {
         effort: reasoningEffort
       },
@@ -221,14 +242,22 @@ Extract EVERYTHING you see. This is a real IEP document with real data - extract
     // Calculate cost and usage
     const responseUsage = response.usage;
     const reasoningTokens = (responseUsage as any)?.reasoning_tokens || 0;
+    // Try to detect cached input tokens from known fields if present
+    const cachedInputTokens = (
+      (responseUsage as any)?.input_cached_tokens ||
+      (responseUsage as any)?.prompt_tokens_details?.cached_tokens ||
+      0
+    );
     const usage: ApiUsage = {
       prompt_tokens: responseUsage?.input_tokens || 0,
       completion_tokens: responseUsage?.output_tokens || 0,
       reasoning_tokens: reasoningTokens,
       total_tokens: (responseUsage?.input_tokens || 0) + (responseUsage?.output_tokens || 0) + reasoningTokens,
-      cost_usd: calculateGPT4oMiniCost(
+      cost_usd: calculate_cost(
+        MODEL,
         responseUsage?.input_tokens || 0,
-        responseUsage?.output_tokens || 0
+        responseUsage?.output_tokens || 0,
+        cachedInputTokens
       )
     };
 
@@ -239,7 +268,7 @@ Extract EVERYTHING you see. This is a real IEP document with real data - extract
     return {
       data: extractedData,
       usage,
-      model: "o4-mini-2025-04-16"
+      model: MODEL
     };
 
   } catch (error) {

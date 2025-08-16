@@ -21,14 +21,14 @@ import * as path from 'path';
 import { ValidationResult } from '../types/form-specific-iep-data';
 
 // Load the form-specific schema
-const schemaPath = path.join(process.cwd(), 'working-iep-schema.json');
+const schemaPath = path.join(process.cwd(), 'the_schema_optimized.json');
 let formSchema: any;
 
 try {
   const schemaContent = fs.readFileSync(schemaPath, 'utf8');
   formSchema = JSON.parse(schemaContent);
 } catch (error) {
-  throw new Error(`Failed to load the_schema.json: ${error}`);
+  throw new Error(`Failed to load the_schema_optimized.json: ${error}`);
 }
 
 // Initialize Ajv with comprehensive error reporting
@@ -140,10 +140,7 @@ function checkCriticalFormIssues(data: any): string[] {
     
     const iep = data.IEP;
     
-    // CRITICAL: Check for AMENDMENTS array (even if empty)
-    if (!Array.isArray(iep.AMENDMENTS)) {
-      issues.push('AMENDMENTS must be an array (even if empty)');
-    }
+    // Note: Do not enforce AMENDMENTS at /IEP; not present in the current optimized schema
     
     // CRITICAL: Check for required main sections
     const requiredSections = [
@@ -211,8 +208,38 @@ function checkCriticalFormIssues(data: any): string[] {
           issues.push(`${serviceType} must be an array`);
         }
       }
+
+      // Cross-validate that services reference existing goals
+      try {
+        const goalsSection = iep["6. MEASURABLE ANNUAL GOALS"]; 
+        const goalNumbers = new Set<number>();
+        if (goalsSection && Array.isArray(goalsSection.GOALS)) {
+          for (const g of goalsSection.GOALS) {
+            const num = Number(g?.NUMBER);
+            if (!Number.isNaN(num)) goalNumbers.add(num);
+          }
+        }
+        for (const serviceType of serviceTypes) {
+          const arr = services[serviceType];
+          if (Array.isArray(arr)) {
+            arr.forEach((svc: any, idx: number) => {
+              if (typeof svc?.["Goal Addressed #"] !== 'undefined') {
+                const refNum = Number(svc["Goal Addressed #"]);
+                if (Number.isNaN(refNum)) {
+                  issues.push(`${serviceType}[${idx}]: "Goal Addressed #" must be a number`);
+                } else if (goalNumbers.size > 0 && !goalNumbers.has(refNum)) {
+                  issues.push(`${serviceType}[${idx}]: references Goal #${refNum} not present in GOALS`);
+                } else if (goalNumbers.size === 0 && refNum >= 1) {
+                  issues.push(`${serviceType}[${idx}]: references Goal #${refNum} but GOALS array is empty`);
+                }
+              }
+            });
+          }
+        }
+      } catch (e) {
+        issues.push(`Error during services-goals cross-check: ${e}`);
+      }
     }
-    
   } catch (error) {
     issues.push(`Error during critical issues check: ${error}`);
   }
